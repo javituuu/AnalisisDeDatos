@@ -1,0 +1,27 @@
+# LaTeX y documentos de informe
+*.tex
+*.aux
+*.log
+*.out
+*.toc
+*.pdf
+*.zip
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+graficos_png/
+
+# Entornos y temporales de Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+.pytest_cache/
+
+# Archivos de sistema operativo y editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
