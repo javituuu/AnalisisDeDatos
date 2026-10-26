@@ -443,8 +443,11 @@ def main():
     output_dir = os.path.join(base_dir, 'graficos')
     os.makedirs(output_dir, exist_ok=True)
     
-    mp10_records = load_csv_data(os.path.join(base_dir, 'MP10_hora.csv'))
-    mp25_records = load_csv_data(os.path.join(base_dir, 'MP2_5.csv'))
+    datos_dir = os.path.join(base_dir, 'Datos')
+    if not os.path.isdir(datos_dir):
+        datos_dir = base_dir
+    mp10_records = load_csv_data(os.path.join(datos_dir, 'MP10_hora.csv'))
+    mp25_records = load_csv_data(os.path.join(datos_dir, 'MP2_5.csv'))
     
     mp10_dict = {r['fecha_str']: r for r in mp10_records if r['valor'] is not None}
     mp25_dict = {r['fecha_str']: r for r in mp25_records if r['valor'] is not None}
