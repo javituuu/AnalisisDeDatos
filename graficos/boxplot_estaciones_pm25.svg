@@ -1,61 +1,89 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="700" height="420" viewBox="0 0 700 420" style="background-color:#ffffff; font-family:sans-serif;">
-<text x="350.0" y="25" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e293b">Distribución Estacional de PM2.5 Diario (µg/m³)</text>
-<text x="350.0" y="42" text-anchor="middle" font-size="12" fill="#64748b">Comparación por Estaciones del Año (ANOVA F = 353.97, Kruskal-Wallis p &lt; 0.0001)</text>
-<line x1="60" y1="360" x2="660" y2="360" stroke="#94a3b8" stroke-width="2"/>
-<line x1="60" y1="50" x2="60" y2="360" stroke="#94a3b8" stroke-width="2"/>
-<line x1="60" y1="360.0" x2="660" y2="360.0" stroke="#f1f5f9" stroke-width="1"/>
-<line x1="55" y1="360.0" x2="60" y2="360.0" stroke="#64748b" stroke-width="1"/>
-<text x="50" y="364.0" text-anchor="end" font-size="11" fill="#475569">0</text>
-<line x1="60" y1="307.8114478114478" x2="660" y2="307.8114478114478" stroke="#f1f5f9" stroke-width="1"/>
-<line x1="55" y1="307.8114478114478" x2="60" y2="307.8114478114478" stroke="#64748b" stroke-width="1"/>
-<text x="50" y="311.8114478114478" text-anchor="end" font-size="11" fill="#475569">10</text>
-<line x1="60" y1="255.6228956228956" x2="660" y2="255.6228956228956" stroke="#f1f5f9" stroke-width="1"/>
-<line x1="55" y1="255.6228956228956" x2="60" y2="255.6228956228956" stroke="#64748b" stroke-width="1"/>
-<text x="50" y="259.6228956228956" text-anchor="end" font-size="11" fill="#475569">20</text>
-<line x1="60" y1="203.43434343434345" x2="660" y2="203.43434343434345" stroke="#f1f5f9" stroke-width="1"/>
-<line x1="55" y1="203.43434343434345" x2="60" y2="203.43434343434345" stroke="#64748b" stroke-width="1"/>
-<text x="50" y="207.43434343434345" text-anchor="end" font-size="11" fill="#475569">30</text>
-<line x1="60" y1="151.24579124579125" x2="660" y2="151.24579124579125" stroke="#f1f5f9" stroke-width="1"/>
-<line x1="55" y1="151.24579124579125" x2="60" y2="151.24579124579125" stroke="#64748b" stroke-width="1"/>
-<text x="50" y="155.24579124579125" text-anchor="end" font-size="11" fill="#475569">40</text>
-<line x1="60" y1="99.05723905723909" x2="660" y2="99.05723905723909" stroke="#f1f5f9" stroke-width="1"/>
-<line x1="55" y1="99.05723905723909" x2="60" y2="99.05723905723909" stroke="#64748b" stroke-width="1"/>
-<text x="50" y="103.05723905723909" text-anchor="end" font-size="11" fill="#475569">50</text>
-<text x="20" y="205.0" text-anchor="middle" font-size="13" font-weight="600" fill="#334155" transform="rotate(-90 20 205.0)">PM2.5 Diario (µg/m³)</text>
-<line x1="135.0" y1="354.7811447811448" x2="135.0" y2="333.9057239057239" stroke="#475569" stroke-width="1.5"/>
-<line x1="135.0" y1="302.5925925925926" x2="135.0" y2="255.6228956228956" stroke="#475569" stroke-width="1.5"/>
-<line x1="120.0" y1="354.7811447811448" x2="150.0" y2="354.7811447811448" stroke="#475569" stroke-width="1.5"/>
-<line x1="120.0" y1="255.6228956228956" x2="150.0" y2="255.6228956228956" stroke="#475569" stroke-width="1.5"/>
-<rect x="105.0" y="302.5925925925926" width="60" height="31.313131313131294" fill="#f59e0b" fill-opacity="0.75" stroke="#f59e0b" stroke-width="2" rx="4"/>
-<line x1="105.0" y1="318.24915824915826" x2="165.0" y2="318.24915824915826" stroke="#0f172a" stroke-width="2.5"/>
-<text x="135.0" y="380" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e293b">Verano</text>
-<text x="135.0" y="395" text-anchor="middle" font-size="10" fill="#64748b">Med: 8.0</text>
-<text x="135.0" y="408" text-anchor="middle" font-size="10" fill="#94a3b8">n=745</text>
-<line x1="285.0" y1="349.56228956228955" x2="285.0" y2="307.8114478114478" stroke="#475569" stroke-width="1.5"/>
-<line x1="285.0" y1="219.09090909090912" x2="285.0" y2="86.01010101010104" stroke="#475569" stroke-width="1.5"/>
-<line x1="270.0" y1="349.56228956228955" x2="300.0" y2="349.56228956228955" stroke="#475569" stroke-width="1.5"/>
-<line x1="270.0" y1="86.01010101010104" x2="300.0" y2="86.01010101010104" stroke="#475569" stroke-width="1.5"/>
-<rect x="255.0" y="219.09090909090912" width="60" height="88.72053872053868" fill="#d97706" fill-opacity="0.75" stroke="#d97706" stroke-width="2" rx="4"/>
-<line x1="255.0" y1="276.4983164983165" x2="315.0" y2="276.4983164983165" stroke="#0f172a" stroke-width="2.5"/>
-<text x="285.0" y="380" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e293b">Otoño</text>
-<text x="285.0" y="395" text-anchor="middle" font-size="10" fill="#64748b">Med: 16.0</text>
-<text x="285.0" y="408" text-anchor="middle" font-size="10" fill="#94a3b8">n=825</text>
-<line x1="435.0" y1="354.7811447811448" x2="435.0" y2="307.8114478114478" stroke="#475569" stroke-width="1.5"/>
-<line x1="435.0" y1="219.09090909090912" x2="435.0" y2="86.01010101010104" stroke="#475569" stroke-width="1.5"/>
-<line x1="420.0" y1="354.7811447811448" x2="450.0" y2="354.7811447811448" stroke="#475569" stroke-width="1.5"/>
-<line x1="420.0" y1="86.01010101010104" x2="450.0" y2="86.01010101010104" stroke="#475569" stroke-width="1.5"/>
-<rect x="405.0" y="219.09090909090912" width="60" height="88.72053872053868" fill="#0284c7" fill-opacity="0.75" stroke="#0284c7" stroke-width="2" rx="4"/>
-<line x1="405.0" y1="266.06060606060606" x2="465.0" y2="266.06060606060606" stroke="#0f172a" stroke-width="2.5"/>
-<text x="435.0" y="380" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e293b">Invierno</text>
-<text x="435.0" y="395" text-anchor="middle" font-size="10" fill="#64748b">Med: 18.0</text>
-<text x="435.0" y="408" text-anchor="middle" font-size="10" fill="#94a3b8">n=881</text>
-<line x1="585.0" y1="354.7811447811448" x2="585.0" y2="328.6868686868687" stroke="#475569" stroke-width="1.5"/>
-<line x1="585.0" y1="307.8114478114478" x2="585.0" y2="276.4983164983165" stroke="#475569" stroke-width="1.5"/>
-<line x1="570.0" y1="354.7811447811448" x2="600.0" y2="354.7811447811448" stroke="#475569" stroke-width="1.5"/>
-<line x1="570.0" y1="276.4983164983165" x2="600.0" y2="276.4983164983165" stroke="#475569" stroke-width="1.5"/>
-<rect x="555.0" y="307.8114478114478" width="60" height="20.8754208754209" fill="#10b981" fill-opacity="0.75" stroke="#10b981" stroke-width="2" rx="4"/>
-<line x1="555.0" y1="318.24915824915826" x2="615.0" y2="318.24915824915826" stroke="#0f172a" stroke-width="2.5"/>
-<text x="585.0" y="380" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e293b">Primavera</text>
-<text x="585.0" y="395" text-anchor="middle" font-size="10" fill="#64748b">Med: 8.0</text>
-<text x="585.0" y="408" text-anchor="middle" font-size="10" fill="#94a3b8">n=829</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="420" viewBox="0 0 820 420" style="background-color:#ffffff; font-family:sans-serif;">
+<text x="410.0" y="24" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e293b">Comparación de PM2.5 Diario según Variables Categóricas (Sección 5.3)</text>
+<text x="410.0" y="42" text-anchor="middle" font-size="12" fill="#64748b">Izquierda: 4 Grupos (ANOVA F = 353.97, Kruskal-Wallis H = 942.29) | Derecha: 2 Grupos (t-Welch = +0.88, Mann-Whitney p = 0.3351)</text>
+<rect x="55" y="65" width="430" height="290" fill="#f8fafc" stroke="#cbd5e1"/>
+<line x1="55" y1="355.0" x2="485" y2="355.0" stroke="#e2e8f0"/>
+<text x="47" y="359.0" text-anchor="end" font-size="10" fill="#475569">0</text>
+<line x1="55" y1="306.7" x2="485" y2="306.7" stroke="#e2e8f0"/>
+<text x="47" y="310.7" text-anchor="end" font-size="10" fill="#475569">10</text>
+<line x1="55" y1="258.3" x2="485" y2="258.3" stroke="#e2e8f0"/>
+<text x="47" y="262.3" text-anchor="end" font-size="10" fill="#475569">20</text>
+<line x1="55" y1="210.0" x2="485" y2="210.0" stroke="#e2e8f0"/>
+<text x="47" y="214.0" text-anchor="end" font-size="10" fill="#475569">30</text>
+<line x1="55" y1="161.7" x2="485" y2="161.7" stroke="#e2e8f0"/>
+<text x="47" y="165.7" text-anchor="end" font-size="10" fill="#475569">40</text>
+<line x1="55" y1="113.3" x2="485" y2="113.3" stroke="#e2e8f0"/>
+<text x="47" y="117.3" text-anchor="end" font-size="10" fill="#475569">50</text>
+<line x1="55" y1="65.0" x2="485" y2="65.0" stroke="#e2e8f0"/>
+<text x="47" y="69.0" text-anchor="end" font-size="10" fill="#475569">60</text>
+<text x="18" y="210.0" text-anchor="middle" font-size="12" font-weight="600" fill="#334155" transform="rotate(-90 18 210.0)">PM2.5 Diario (µg/m³)</text>
+<line x1="108.8" y1="350.2" x2="108.8" y2="330.8" stroke="#475569" stroke-width="1.5"/>
+<line x1="108.8" y1="301.8" x2="108.8" y2="258.3" stroke="#475569" stroke-width="1.5"/>
+<line x1="94.8" y1="350.2" x2="122.8" y2="350.2" stroke="#475569" stroke-width="1.5"/>
+<line x1="94.8" y1="258.3" x2="122.8" y2="258.3" stroke="#475569" stroke-width="1.5"/>
+<rect x="83.8" y="301.8" width="50" height="29.0" fill="#f59e0b" fill-opacity="0.75" stroke="#f59e0b" stroke-width="2" rx="3"/>
+<line x1="83.8" y1="316.3" x2="133.8" y2="316.3" stroke="#0f172a" stroke-width="2.5"/>
+<text x="108.8" y="373" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#1e293b">Verano</text>
+<text x="108.8" y="387" text-anchor="middle" font-size="10" fill="#64748b">Med: 8.0</text>
+<text x="108.8" y="400" text-anchor="middle" font-size="9.5" fill="#94a3b8">(n=760)</text>
+<line x1="216.2" y1="345.3" x2="216.2" y2="306.7" stroke="#475569" stroke-width="1.5"/>
+<line x1="216.2" y1="224.5" x2="216.2" y2="101.2" stroke="#475569" stroke-width="1.5"/>
+<line x1="202.2" y1="345.3" x2="230.2" y2="345.3" stroke="#475569" stroke-width="1.5"/>
+<line x1="202.2" y1="101.2" x2="230.2" y2="101.2" stroke="#475569" stroke-width="1.5"/>
+<rect x="191.2" y="224.5" width="50" height="82.2" fill="#d97706" fill-opacity="0.75" stroke="#d97706" stroke-width="2" rx="3"/>
+<line x1="191.2" y1="275.2" x2="241.2" y2="275.2" stroke="#0f172a" stroke-width="2.5"/>
+<text x="216.2" y="373" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#1e293b">Otoño</text>
+<text x="216.2" y="387" text-anchor="middle" font-size="10" fill="#64748b">Med: 16.5</text>
+<text x="216.2" y="400" text-anchor="middle" font-size="9.5" fill="#94a3b8">(n=828)</text>
+<line x1="323.8" y1="350.2" x2="323.8" y2="306.7" stroke="#475569" stroke-width="1.5"/>
+<line x1="323.8" y1="224.5" x2="323.8" y2="101.2" stroke="#475569" stroke-width="1.5"/>
+<line x1="309.8" y1="350.2" x2="337.8" y2="350.2" stroke="#475569" stroke-width="1.5"/>
+<line x1="309.8" y1="101.2" x2="337.8" y2="101.2" stroke="#475569" stroke-width="1.5"/>
+<rect x="298.8" y="224.5" width="50" height="82.2" fill="#0284c7" fill-opacity="0.75" stroke="#0284c7" stroke-width="2" rx="3"/>
+<line x1="298.8" y1="268.0" x2="348.8" y2="268.0" stroke="#0f172a" stroke-width="2.5"/>
+<text x="323.8" y="373" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#1e293b">Invierno</text>
+<text x="323.8" y="387" text-anchor="middle" font-size="10" fill="#64748b">Med: 18.0</text>
+<text x="323.8" y="400" text-anchor="middle" font-size="9.5" fill="#94a3b8">(n=892)</text>
+<line x1="431.2" y1="350.2" x2="431.2" y2="326.0" stroke="#475569" stroke-width="1.5"/>
+<line x1="431.2" y1="306.7" x2="431.2" y2="277.7" stroke="#475569" stroke-width="1.5"/>
+<line x1="417.2" y1="350.2" x2="445.2" y2="350.2" stroke="#475569" stroke-width="1.5"/>
+<line x1="417.2" y1="277.7" x2="445.2" y2="277.7" stroke="#475569" stroke-width="1.5"/>
+<rect x="406.2" y="306.7" width="50" height="19.3" fill="#10b981" fill-opacity="0.75" stroke="#10b981" stroke-width="2" rx="3"/>
+<line x1="406.2" y1="316.3" x2="456.2" y2="316.3" stroke="#0f172a" stroke-width="2.5"/>
+<text x="431.2" y="373" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#1e293b">Primavera</text>
+<text x="431.2" y="387" text-anchor="middle" font-size="10" fill="#64748b">Med: 8.0</text>
+<text x="431.2" y="400" text-anchor="middle" font-size="9.5" fill="#94a3b8">(n=832)</text>
+<rect x="540" y="65" width="250" height="290" fill="#f8fafc" stroke="#cbd5e1"/>
+<line x1="540" y1="355.0" x2="790" y2="355.0" stroke="#e2e8f0"/>
+<text x="532" y="359.0" text-anchor="end" font-size="10" fill="#475569">0</text>
+<line x1="540" y1="306.7" x2="790" y2="306.7" stroke="#e2e8f0"/>
+<text x="532" y="310.7" text-anchor="end" font-size="10" fill="#475569">10</text>
+<line x1="540" y1="258.3" x2="790" y2="258.3" stroke="#e2e8f0"/>
+<text x="532" y="262.3" text-anchor="end" font-size="10" fill="#475569">20</text>
+<line x1="540" y1="210.0" x2="790" y2="210.0" stroke="#e2e8f0"/>
+<text x="532" y="214.0" text-anchor="end" font-size="10" fill="#475569">30</text>
+<line x1="540" y1="161.7" x2="790" y2="161.7" stroke="#e2e8f0"/>
+<text x="532" y="165.7" text-anchor="end" font-size="10" fill="#475569">40</text>
+<line x1="540" y1="113.3" x2="790" y2="113.3" stroke="#e2e8f0"/>
+<text x="532" y="117.3" text-anchor="end" font-size="10" fill="#475569">50</text>
+<line x1="540" y1="65.0" x2="790" y2="65.0" stroke="#e2e8f0"/>
+<text x="532" y="69.0" text-anchor="end" font-size="10" fill="#475569">60</text>
+<line x1="602.5" y1="350.2" x2="602.5" y2="321.2" stroke="#475569" stroke-width="1.5"/>
+<line x1="602.5" y1="268.0" x2="602.5" y2="188.2" stroke="#475569" stroke-width="1.5"/>
+<line x1="588.5" y1="350.2" x2="616.5" y2="350.2" stroke="#475569" stroke-width="1.5"/>
+<line x1="588.5" y1="188.2" x2="616.5" y2="188.2" stroke="#475569" stroke-width="1.5"/>
+<rect x="577.5" y="268.0" width="50" height="53.2" fill="#3b82f6" fill-opacity="0.75" stroke="#3b82f6" stroke-width="2" rx="3"/>
+<line x1="577.5" y1="301.8" x2="627.5" y2="301.8" stroke="#0f172a" stroke-width="2.5"/>
+<text x="602.5" y="373" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#1e293b">Laboral</text>
+<text x="602.5" y="387" text-anchor="middle" font-size="10" fill="#64748b">Med: 11.0</text>
+<text x="602.5" y="400" text-anchor="middle" font-size="9.5" fill="#94a3b8">(n=2365)</text>
+<line x1="727.5" y1="350.2" x2="727.5" y2="321.2" stroke="#475569" stroke-width="1.5"/>
+<line x1="727.5" y1="263.2" x2="727.5" y2="176.2" stroke="#475569" stroke-width="1.5"/>
+<line x1="713.5" y1="350.2" x2="741.5" y2="350.2" stroke="#475569" stroke-width="1.5"/>
+<line x1="713.5" y1="176.2" x2="741.5" y2="176.2" stroke="#475569" stroke-width="1.5"/>
+<rect x="702.5" y="263.2" width="50" height="58.0" fill="#f97316" fill-opacity="0.75" stroke="#f97316" stroke-width="2" rx="3"/>
+<line x1="702.5" y1="306.7" x2="752.5" y2="306.7" stroke="#0f172a" stroke-width="2.5"/>
+<text x="727.5" y="373" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#1e293b">Fin de semana</text>
+<text x="727.5" y="387" text-anchor="middle" font-size="10" fill="#64748b">Med: 10.0</text>
+<text x="727.5" y="400" text-anchor="middle" font-size="9.5" fill="#94a3b8">(n=947)</text>
 </svg>
