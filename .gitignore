@@ -1,15 +1,20 @@
 # LaTeX y documentos de informe
-*.tex
 *.aux
 *.log
 *.out
 *.toc
 *.pdf
-*.zip
 *.synctex.gz
 *.fls
 *.fdb_latexmk
 graficos_png/
+
+# Excepciones para archivos entregables oficiales
+!paper_certamen2/
+!paper_certamen2/*.tex
+!paper_certamen2.zip
+!presentacion_avance2/*.tex
+!presentacion_avance2_beamer.zip
 
 # Entornos y temporales de Python
 __pycache__/
