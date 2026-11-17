@@ -7,14 +7,17 @@
 *.synctex.gz
 *.fls
 *.fdb_latexmk
+*.nav
+*.snm
+*.vrb
+*.bbl
+*.blg
+graficos/
 graficos_png/
 
-# Excepciones para archivos entregables oficiales
-!paper_certamen2/
-!paper_certamen2/*.tex
-!paper_certamen2.zip
-!presentacion_avance2/*.tex
-!presentacion_avance2_beamer.zip
+# Excepciones para fuentes LaTeX oficiales
+!latex/
+!latex/**/*.tex
 
 # Entornos y temporales de Python
 __pycache__/

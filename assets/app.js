@@ -110,84 +110,84 @@
   ];
 
   /* ------------------------------------------------------------------------
-     3. CATÁLOGO DE FIGURAS CIENTÍFICAS ORIGINALES (paper_certamen2/figuras)
+     3. CATÁLOGO DE FIGURAS CIENTÍFICAS ORIGINALES (assets/figuras)
      ------------------------------------------------------------------------ */
   const SCIENTIFIC_FIGURES = [
     {
       id: 'fig1',
       title: 'Fig. 1 · Completitud Temporal y Mecanismo MAR (2009–2026)',
       sub: 'Auditoría de cobertura anual en los 16 datasets SINCA',
-      path: 'paper_certamen2/figuras/fig1_completitud_temporal.png',
+      path: 'assets/figuras/fig1_completitud_temporal.png',
       desc: 'Evolución anual del porcentaje de datos validados por contaminante en Kingston College. Evidencia el mecanismo MAR (Missing At Random) por la incorporación escalonada de sensores post-2009 y mantenciones programadas (MCAR).'
     },
     {
       id: 'fig2',
       title: 'Fig. 2 · Diagnóstico de Atípicos (Grubbs) y Winsorización',
       sub: 'Regla 1.5·RIC (Ls = 63 µg/m³), Z-score y estabilización de varianza',
-      path: 'paper_certamen2/figuras/fig2_outliers_winsorizacion.png',
+      path: 'assets/figuras/fig2_outliers_winsorizacion.png',
       desc: 'Comparación de la distribución antes y después de la winsorización en el umbral superior Ls = 63.00 µg/m³ (154 atípicos detectados, Test de Grubbs G = 9.10 > 4.38). La mediana permanece intacta en 26.00 µg/m³.'
     },
     {
       id: 'fig3',
       title: 'Fig. 3 · Bondad de Ajuste: Escala Original vs. Logarítmica',
       sub: 'Histograma de densidad y Q-Q Plot Normal de PM2.5 y ln(PM2.5)',
-      path: 'paper_certamen2/figuras/fig3_histograma_qq_normalidad.png',
+      path: 'assets/figuras/fig3_histograma_qq_normalidad.png',
       desc: 'Demostración visual de cómo la fuerte asimetría positiva en escala original (g1 = +2.05, AD A²* = 151.16) se corrige mediante la transformación logarítmica ln(PM2.5), logrando simetría gaussiana central (g1 = 0.00, A²* = 8.47).'
     },
     {
       id: 'fig4',
       title: 'Fig. 4 · Acoplamiento Gravimétrico Bivariado MP10 vs. PM2.5',
       sub: 'Recta EMCO (b1 = 0.6989, R² = 68.52%) e intervalos al 95%',
-      path: 'paper_certamen2/figuras/fig4_dispersion_mp10_pm25.png',
+      path: 'assets/figuras/fig4_dispersion_mp10_pm25.png',
       desc: 'Diagrama de dispersión sobre los n = 3,280 días físicamente consistentes (PM2.5 <= MP10). Confirma empíricamente que cerca del 70% de la masa respirable corresponde a fracción fina de combustión (Cereceda-Balic et al., 2020).'
     },
     {
       id: 'fig5',
       title: 'Fig. 5 · Matrices de Correlación Multivariada (Pearson y Spearman)',
       sub: 'Asociación entre PM2.5, MP10, CO, NO2 y O3 (n = 3,185)',
-      path: 'paper_certamen2/figuras/fig5_heatmap_correlaciones.png',
+      path: 'assets/figuras/fig5_heatmap_correlaciones.png',
       desc: 'Destaca el fuerte acoplamiento pirogénico entre PM2.5 y CO (r = 0.834 / rho_s = 0.812) frente a la correlación negativa con el ozono troposférico O3 (r = -0.504), típico de titulación invernal y fotoquímica estival.'
     },
     {
       id: 'fig6',
       title: 'Fig. 6 · Contraste por Tipo de Día: Invarianza en PM2.5',
       sub: 'Día Laboral (Lun–Vie) vs. Fin de Semana (Sáb–Dom)',
-      path: 'paper_certamen2/figuras/fig6_boxplot_dos_grupos_dia.png',
+      path: 'assets/figuras/fig6_boxplot_dos_grupos_dia.png',
       desc: 'Prueba visual de H2: mientras el PM2.5 permanece estadísticamente idéntico entre semana y fin de semana (t = 0.88, p = 0.3820), el MP10 experimenta una leve reducción por menor resuspensión mecánica de polvo vial.'
     },
     {
       id: 'fig7',
       title: 'Fig. 7 · ANOVA Estacional e Intervalos Post-Hoc de Tukey HSD',
       sub: 'Partición bimodal entre {Verano, Primavera} y {Otoño, Invierno}',
-      path: 'paper_certamen2/figuras/fig7_boxplot_tukey_estaciones.png',
+      path: 'assets/figuras/fig7_boxplot_tukey_estaciones.png',
       desc: 'Comparación de las 4 estaciones astronómicas (F = 353.97, eta² = 24.30%; Kruskal-Wallis H = 942.29) e intervalos simultáneos de Tukey al 95% (q_crit = 3.633).'
     },
     {
       id: 'fig8',
       title: 'Fig. 8 · Análisis de Contingencia PPDA (D.S. N° 6/2019)',
       sub: 'Independencia por Tipo de Día (Chi² = 1.34, p = 0.719) vs. Estacionalidad',
-      path: 'paper_certamen2/figuras/fig8_barras_apiladas_contingencia.png',
+      path: 'assets/figuras/fig8_barras_apiladas_contingencia.png',
       desc: 'Gráfico de barras apiladas al 100% que demuestra que la proporción de días laborales y de fin de semana en niveles Bueno y Regular replica exactamente la proporción de calendario (71.4% / 28.6%, V de Cramér = 0.0202).'
     },
     {
       id: 'fig9',
       title: 'Fig. 9 · Comparación Estructural de Modelos EMCO (M1 vs. M3)',
       sub: 'Cambio de pendiente estacional y ajuste Observados vs. Predichos',
-      path: 'paper_certamen2/figuras/fig9_modelos_regresion_comparacion.png',
+      path: 'assets/figuras/fig9_modelos_regresion_comparacion.png',
       desc: 'Muestra la superioridad predictiva del Modelo 3 (R² = 82.90%, RMSE = 4.47 µg/m³) frente al Modelo 1 simple (R² = 68.52%), reduciendo la dispersión residual alrededor de la recta identidad.'
     },
     {
       id: 'fig10',
       title: 'Fig. 10 · Auditoría de los 6 Supuestos de Gauss-Markov en Residuos',
       sub: 'Residuos vs. Ajustados, Histograma, Q-Q Normal y Distancia de Cook',
-      path: 'paper_certamen2/figuras/fig10_diagnostico_residuos_emco.png',
+      path: 'assets/figuras/fig10_diagnostico_residuos_emco.png',
       desc: 'Verifica esperanza nula (suma e_i = 0), ausencia de puntos influyentes críticos (máx D_i de Cook = 0.387 < 1.0) y estructura de varianza antes y después de la estabilización Log-Log.'
     },
     {
       id: 'fig11',
       title: 'Fig. 11 · Selección Stepwise: Backward Elimination & Forward Selection',
       sub: 'Trayectoria de optimización de AIC, BIC, R² ajustado y error Se',
-      path: 'paper_certamen2/figuras/seleccion_variables_backward_forward.png',
+      path: 'assets/figuras/seleccion_variables_backward_forward.png',
       desc: 'Ilustra la convergencia matemática de ambos algoritmos hacia el modelo parsimonioso de 7 regresores que minimiza el Criterio Bayesiano de Schwarz (BIC = 9,601.54) al descartar el NO2.'
     }
   ];
