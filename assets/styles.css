@@ -1,0 +1,1261 @@
+/* ==========================================================================
+   OBSERVATORIO ESTADÍSTICO E INFERENCIAL — ESTACIÓN KINGSTON COLLEGE (SINCA)
+   Sistema Visual: Atlas Atmosférico & Monografía Sinóptica ("Bruma del Biobío")
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  /* Superficies Minerales y Pizarra Costera */
+  --bg-canvas: #F3F4EF;
+  --bg-surface: #FFFFFF;
+  --bg-subtle: #EAECE4;
+  --bg-warm-tint: #F9F5F0;
+  --bg-cool-tint: #EFF4F8;
+  --bg-rail: #121A24;
+  --bg-rail-elevated: #1A2533;
+  --bg-rail-hover: #223042;
+
+  /* Tinta y Jerarquía de Texto (Contraste >= 4.5:1 verificado) */
+  --ink-primary: #141B22;
+  --ink-secondary: #334150;
+  --ink-muted: #526273;
+  --ink-on-rail: #F1F5F9;
+  --ink-on-rail-secondary: #B8C7D9;
+  --ink-on-rail-muted: #8FA3B8;
+
+  /* Colores Semánticos Atmosféricos (Física de la Cuenca del Biobío) */
+  --accent-synoptic: #1B4D7E;       /* Régimen Cálido / Ventilación Costera */
+  --accent-synoptic-deep: #123659;
+  --accent-synoptic-soft: #DCE8F3;
+  --accent-biomass: #C85A17;        /* Régimen Frío / Quema Residencial de Leña */
+  --accent-biomass-deep: #9E430B;
+  --accent-biomass-soft: #F9E6D8;
+  --accent-active: var(--accent-synoptic);
+  --accent-active-soft: var(--accent-synoptic-soft);
+
+  /* Escala Oficial PPDA D.S. N° 6/2019 y D.S. N° 12/2011 */
+  --gec-bueno: #1F7A4C;
+  --gec-bueno-bg: #E3F3EA;
+  --gec-regular: #9A6B00;
+  --gec-regular-bg: #FDF3D7;
+  --gec-alerta: #C85A17;
+  --gec-alerta-bg: #FCE8DB;
+  --gec-preemergencia: #B81D13;
+  --gec-preemergencia-bg: #FADBD8;
+  --gec-emergencia: #5C0E28;
+  --gec-emergencia-bg: #F2D7E0;
+
+  /* Bordes y Elevación */
+  --border-hairline: #D5D9CE;
+  --border-strong: #B6BEB0;
+  --border-rail: #263547;
+  --shadow-ambient: 0 6px 20px -4px rgba(18, 26, 36, 0.07), 0 2px 6px -1px rgba(18, 26, 36, 0.04);
+  --shadow-elevated: 0 14px 32px -6px rgba(18, 26, 36, 0.12), 0 4px 10px -2px rgba(18, 26, 36, 0.06);
+
+  /* Tipografía */
+  --font-serif: 'Newsreader', 'C059', 'Nimbus Roman', Georgia, serif;
+  --font-sans: 'Source Sans 3', 'iA Writer Quattro S', 'Noto Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', 'JetBrainsMono Nerd Font', 'iA Writer Mono S', monospace;
+
+  /* Radios y Dimensiones */
+  --radius-xs: 3px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --rail-width: 272px;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Cambio dinámico de atmósfera según el régimen seleccionado */
+body[data-regime="frio"] {
+  --accent-active: #C85A17;
+  --accent-active-soft: #F9E6D8;
+  --bg-canvas: #F5F2EC;
+}
+
+body[data-regime="calido"] {
+  --accent-active: #1B6B63;
+  --accent-active-soft: #DCF0EC;
+  --bg-canvas: #F0F5F3;
+}
+
+body[data-regime="cohorte2023"] {
+  --accent-active: #2B4C7E;
+  --accent-active-soft: #E0E8F5;
+}
+
+/* Superficies del navegador (Craft Floor) */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+::selection {
+  background-color: rgba(200, 90, 23, 0.20);
+  color: var(--ink-primary);
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #7A8B9E var(--bg-subtle);
+  caret-color: var(--accent-biomass);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-subtle);
+}
+::-webkit-scrollbar-thumb {
+  background: #7A8B9E;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-synoptic);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-synoptic);
+  outline-offset: 2px;
+}
+
+a {
+  color: var(--accent-synoptic);
+  text-underline-offset: 0.22em;
+  text-decoration-thickness: 1px;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: var(--bg-canvas);
+  color: var(--ink-primary);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 220ms var(--ease-out-expo);
+}
+
+/* Datos numéricos y tablas siempre tabulares */
+.num, table td, table th, code, .stat-val, .math-inline, input[type="range"] + output {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ==========================================================================
+   ESTRUCTURA GENERAL (SHELL OPERATIVO + RIEL SINÓPTICO)
+   ========================================================================== */
+
+.app-shell {
+  display: grid;
+  grid-template-columns: var(--rail-width) minmax(0, 1fr);
+  min-height: 100vh;
+}
+
+/* RIEL LATERAL EN PIZARRA COSTERA */
+.synoptic-rail {
+  background-color: var(--bg-rail);
+  color: var(--ink-on-rail);
+  border-right: 1px solid var(--border-rail);
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.25rem 1rem;
+  overflow-y: auto;
+  z-index: 30;
+}
+
+.rail-station-box {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-rail);
+}
+
+.rail-station-title {
+  margin: 0 0 0.35rem 0;
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--ink-on-rail);
+  letter-spacing: -0.01em;
+}
+
+.rail-station-meta {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--ink-on-rail-secondary);
+  line-height: 1.45;
+}
+
+.rail-coords {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0.55rem;
+  padding: 0.25rem 0.5rem;
+  background-color: var(--bg-rail-elevated);
+  border: 1px solid var(--border-rail);
+  border-radius: var(--radius-xs);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--ink-on-rail-secondary);
+}
+
+.rail-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin: 1rem 0;
+  flex: 1;
+}
+
+.rail-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.6rem 0.7rem;
+  border-radius: var(--radius-sm);
+  color: var(--ink-on-rail-secondary);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: 1px solid transparent;
+  transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease;
+}
+
+.rail-nav-link svg {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+  stroke: currentColor;
+  opacity: 0.85;
+}
+
+.rail-nav-link:hover {
+  background-color: var(--bg-rail-hover);
+  color: var(--ink-on-rail);
+}
+
+.rail-nav-link.active {
+  background-color: var(--bg-rail-elevated);
+  color: #FFFFFF;
+  border-color: #384F6A;
+  font-weight: 600;
+}
+
+.rail-nav-link.active svg {
+  stroke: #F59E0B;
+  opacity: 1;
+}
+
+.rail-norm-legend {
+  background-color: var(--bg-rail-elevated);
+  border: 1px solid var(--border-rail);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem;
+  margin-bottom: 0.85rem;
+}
+
+.rail-norm-heading {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--ink-on-rail);
+}
+
+.gec-scale-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.75rem;
+  color: var(--ink-on-rail-secondary);
+}
+
+.gec-scale-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.gec-dot-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.gec-swatch {
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.rail-footer {
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border-rail);
+  font-size: 0.75rem;
+  color: var(--ink-on-rail-muted);
+  line-height: 1.4;
+}
+
+.rail-footer strong {
+  color: var(--ink-on-rail-secondary);
+  display: block;
+  margin-bottom: 0.15rem;
+}
+
+/* ==========================================================================
+   ÁREA DE TRABAJO PRINCIPAL Y CABECERA DE COMANDO
+   ========================================================================== */
+
+.workspace-main {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.command-header {
+  position: sticky;
+  top: 0;
+  z-index: 25;
+  background-color: rgba(243, 244, 239, 0.94);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border-hairline);
+  padding: 0.85rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.header-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.study-main-title {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--ink-primary);
+  letter-spacing: -0.015em;
+}
+
+.study-subtitle {
+  margin: 0;
+  font-size: 0.84rem;
+  color: var(--ink-secondary);
+}
+
+/* Conmutador Maestro de Régimen Atmosférico (Signature Move) */
+.regime-switcher {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--bg-subtle);
+  padding: 0.22rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-hairline);
+  gap: 0.2rem;
+}
+
+.regime-btn {
+  appearance: none;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--ink-secondary);
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  padding: 0.42rem 0.75rem;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: background-color 160ms ease, color 160ms ease, box-shadow 160ms ease;
+}
+
+.regime-btn:hover {
+  color: var(--ink-primary);
+  background-color: rgba(255, 255, 255, 0.55);
+}
+
+.regime-btn.active {
+  background-color: var(--bg-surface);
+  color: var(--ink-primary);
+  border-color: var(--border-hairline);
+  box-shadow: 0 1px 3px rgba(18, 26, 36, 0.08);
+}
+
+.regime-btn[data-regime="frio"].active {
+  background-color: var(--accent-biomass);
+  color: #FFFFFF;
+  border-color: var(--accent-biomass-deep);
+}
+
+.regime-btn[data-regime="calido"].active {
+  background-color: var(--accent-synoptic);
+  color: #FFFFFF;
+  border-color: var(--accent-synoptic-deep);
+}
+
+/* ==========================================================================
+   CONTENEDOR DE SECCIONES Y RITMO ESPACIAL
+   ========================================================================== */
+
+.content-container {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1.75rem 2rem 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.analysis-section {
+  scroll-margin-top: 4.75rem;
+}
+
+.section-header-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 2px solid var(--ink-primary);
+}
+
+.section-heading {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 1.65rem;
+  font-weight: 600;
+  color: var(--ink-primary);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.section-meta-pill {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  line-height: 1.5;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-xs);
+  background-color: var(--bg-subtle);
+  color: var(--ink-secondary);
+  border: 1px solid var(--border-hairline);
+}
+
+.section-lead {
+  margin: 0 0 1.5rem 0;
+  max-width: 72ch;
+  color: var(--ink-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   PRIMER VIEWPORT: CORTE SINÓPTICO DE LA CUENCA + MATRIZ DE RÉGIMEN ACTIVO
+   ========================================================================== */
+
+.hero-observatory-grid {
+  display: grid;
+  grid-template-columns: 1.12fr 1fr;
+  gap: 1.35rem;
+  align-items: stretch;
+}
+
+.panel-surface {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-ambient);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-header {
+  padding: 0.95rem 1.25rem;
+  border-bottom: 1px solid var(--border-hairline);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.65rem 1rem;
+  background-color: #FAFBF8;
+}
+
+.panel-header > div:first-child {
+  flex: 1 1 240px;
+}
+
+.panel-title {
+  margin: 0;
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: var(--ink-primary);
+}
+
+.panel-subtitle {
+  margin: 0.15rem 0 0 0;
+  font-size: 0.8125rem;
+  color: var(--ink-muted);
+}
+
+.panel-body {
+  padding: 1.25rem;
+  flex: 1;
+  overflow-x: auto;
+}
+
+/* Lámina Ilustrada + Diagrama Sinóptico Interactivo */
+.basin-visual-stage {
+  position: relative;
+  background-color: #121A24;
+  color: #F1F5F9;
+  border-bottom: 1px solid var(--border-hairline);
+  overflow: hidden;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.basin-plate-backdrop {
+  position: relative;
+  width: 100%;
+  min-height: 255px;
+  flex: 1;
+  overflow: hidden;
+  border-bottom: 1px solid #263547;
+}
+
+.basin-plate-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 45%;
+  display: block;
+  filter: contrast(1.03);
+  transition: transform 400ms var(--ease-out-expo), filter 300ms ease;
+}
+
+.basin-plate-overlay {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(18, 26, 36, 0.25) 0%, rgba(18, 26, 36, 0.85) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.1rem 1.25rem;
+}
+
+.basin-overlay-Banner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.basin-overlay-title {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+.basin-overlay-desc {
+  margin: 0.2rem 0 0 0;
+  font-size: 0.83rem;
+  color: #D0DCEF;
+  max-width: 60ch;
+}
+
+.basin-schematic-wrap {
+  padding: 1rem 1.25rem;
+  background-color: #151F2B;
+}
+
+.basin-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Matriz Comparativa Dual en Vivo (Derecha del Hero) */
+.regime-live-matrix {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.regime-status-banner {
+  padding: 0.9rem 1.25rem;
+  background-color: var(--accent-active-soft);
+  border-bottom: 1px solid var(--border-hairline);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.regime-status-name {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--ink-primary);
+}
+
+.regime-status-detail {
+  margin: 0.15rem 0 0 0;
+  font-size: 0.8rem;
+  color: var(--ink-secondary);
+}
+
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-xs);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: 1px solid currentColor;
+  white-space: nowrap;
+}
+
+.badge-bueno { color: var(--gec-bueno); background-color: var(--gec-bueno-bg); }
+.badge-regular { color: var(--gec-regular); background-color: var(--gec-regular-bg); }
+.badge-alerta { color: var(--gec-alerta); background-color: var(--gec-alerta-bg); }
+.badge-preemergencia { color: var(--gec-preemergencia); background-color: var(--gec-preemergencia-bg); }
+.badge-emergencia { color: var(--gec-emergencia); background-color: var(--gec-emergencia-bg); }
+.badge-synoptic { color: var(--accent-synoptic); background-color: var(--accent-synoptic-soft); }
+
+/* Tabla de lecturas duales (Paramétrica vs No Paramétrica) */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+
+.data-table th,
+.data-table td {
+  padding: 0.52rem 0.6rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-hairline);
+  vertical-align: middle;
+}
+
+.data-table th {
+  background-color: #F7F8F4;
+  color: var(--ink-secondary);
+  font-weight: 600;
+  font-size: 0.75rem;
+  border-top: 1px solid var(--border-hairline);
+}
+
+.data-table td.num,
+.data-table th.num {
+  text-align: right;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+}
+
+.data-table tbody tr:hover {
+  background-color: #F8FAF5;
+}
+
+/* Embudo de Higiene de Datos (4 Etapas SMA 2024) */
+.funnel-pipeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-md);
+  background-color: var(--bg-surface);
+  overflow: hidden;
+  box-shadow: var(--shadow-ambient);
+}
+
+.funnel-step {
+  padding: 1.15rem 1.2rem;
+  border-right: 1px solid var(--border-hairline);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: background-color 160ms ease;
+}
+
+.funnel-step:last-child {
+  border-right: none;
+  background-color: #F7FAF8;
+}
+
+.funnel-step-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.funnel-step-title {
+  margin: 0;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--ink-primary);
+}
+
+.funnel-count {
+  font-family: var(--font-mono);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--accent-active);
+  margin: 0.25rem 0;
+}
+
+.funnel-desc {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--ink-secondary);
+  line-height: 1.45;
+}
+
+.funnel-bar-track {
+  height: 6px;
+  background-color: var(--bg-subtle);
+  border-radius: 3px;
+  margin-top: 0.85rem;
+  overflow: hidden;
+}
+
+.funnel-bar-fill {
+  height: 100%;
+  background-color: var(--accent-active);
+  border-radius: 3px;
+}
+
+/* ==========================================================================
+   LAYOUTS DE DOS COLUMNAS Y CONTROLES INTERACTIVOS
+   ========================================================================== */
+
+.split-workbench {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.split-workbench-equal {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.tab-strip {
+  display: inline-flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+  gap: 0.25rem;
+  background-color: var(--bg-subtle);
+  padding: 0.2rem;
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--border-hairline);
+}
+
+.tab-btn {
+  appearance: none;
+  border: none;
+  background: transparent;
+  padding: 0.32rem 0.68rem;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--ink-secondary);
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 150ms ease, color 150ms ease;
+}
+
+.tab-btn:hover {
+  color: var(--ink-primary);
+}
+
+.tab-btn.active {
+  background-color: var(--bg-surface);
+  color: var(--ink-primary);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+/* Gráficos SVG Interactivos */
+.chart-stage {
+  width: 100%;
+  background-color: #FCFDFB;
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem;
+  position: relative;
+}
+
+.chart-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+
+.chart-caption {
+  margin: 0.65rem 0 0 0;
+  font-size: 0.79rem;
+  color: var(--ink-muted);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* Barras de comparación en tabla Tukey y Stepwise */
+.inline-ci-bar {
+  position: relative;
+  height: 18px;
+  background-color: var(--bg-subtle);
+  border-radius: 3px;
+  min-width: 130px;
+}
+
+.inline-ci-zero {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1.5px;
+  background-color: var(--ink-primary);
+  z-index: 2;
+}
+
+.inline-ci-span {
+  position: absolute;
+  top: 5px;
+  height: 8px;
+  border-radius: 2px;
+}
+
+/* ==========================================================================
+   SIMULADOR PREDICTIVO EMCO (CALCULADORA EN VIVO H3 / CERTAMEN 2)
+   ========================================================================== */
+
+.simulator-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 1.5rem;
+}
+
+.sim-controls-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem 1rem;
+}
+
+.control-group {
+  margin-bottom: 1rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid var(--border-hairline);
+}
+
+.control-group:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.control-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 0.35rem;
+}
+
+.control-label {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--ink-primary);
+}
+
+.control-output {
+  font-family: var(--font-mono);
+  font-size: 0.81rem;
+  font-weight: 600;
+  color: var(--accent-active);
+  background-color: var(--bg-subtle);
+  padding: 0.1rem 0.45rem;
+  border-radius: var(--radius-xs);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.range-slider {
+  width: 100%;
+  accent-color: var(--accent-active);
+  cursor: pointer;
+}
+
+.preset-Toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.preset-chip {
+  appearance: none;
+  border: 1px solid var(--border-strong);
+  background-color: var(--bg-surface);
+  color: var(--ink-secondary);
+  font-family: var(--font-sans);
+  font-size: 0.76rem;
+  font-weight: 600;
+  padding: 0.3rem 0.6rem;
+  border-radius: var(--radius-xs);
+  cursor: pointer;
+  transition: all 150ms ease;
+}
+
+.preset-chip:hover {
+  border-color: var(--ink-primary);
+  color: var(--ink-primary);
+  background-color: var(--bg-subtle);
+}
+
+.ppda-thermometer-card {
+  background-color: #FAFBF8;
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-sm);
+  padding: 0.9rem 1.05rem 0.75rem 1.05rem;
+  margin-bottom: 1rem;
+}
+
+.ppda-thermometer-head {
+  margin-bottom: 0.25rem;
+}
+
+.ppda-thermometer-toprow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.ppda-thermometer-title {
+  margin: 0;
+  font-size: 0.94rem;
+  font-weight: 700;
+  color: var(--ink-primary);
+}
+
+.ppda-thermometer-sub {
+  margin: 0.18rem 0 0 0;
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+}
+
+.ppda-model-chip {
+  font-family: var(--font-mono);
+  font-size: 0.71rem;
+  font-weight: 600;
+  padding: 0.18rem 0.5rem;
+  border-radius: var(--radius-xs);
+  background-color: var(--bg-subtle);
+  color: var(--ink-secondary);
+  border: 1px solid var(--border-hairline);
+  white-space: nowrap;
+}
+
+.ppda-gauge-wrap {
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.ppda-gauge-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.ppda-zone-strip {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem 0.48rem;
+  padding-top: 0.5rem;
+  margin-top: 0.25rem;
+  border-top: 1px solid var(--border-hairline);
+  font-size: 0.685rem;
+  color: var(--ink-secondary);
+}
+
+.ppda-zone-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.32rem;
+  font-weight: 600;
+}
+
+.sim-model-row {
+  cursor: pointer;
+  transition: background-color 140ms ease;
+}
+
+.sim-model-row:hover {
+  background-color: #F2F5EC !important;
+}
+
+.sim-model-row.sim-model-active {
+  background-color: var(--accent-active-soft) !important;
+  font-weight: 600;
+}
+
+.preset-chip.active {
+  background-color: var(--ink-primary);
+  color: #FFFFFF;
+  border-color: var(--ink-primary);
+}
+
+.equation-box {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  background-color: #141B22;
+  color: #E2E8F0;
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-sm);
+  overflow-x: auto;
+  line-height: 1.55;
+  margin-top: 0.85rem;
+}
+
+.equation-box .coef-hi {
+  color: #FBBF24;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   GALERÍA CIENTÍFICA DE ALTA RESOLUCIÓN & VISOR DE FIGURAS
+   ========================================================================== */
+
+.figure-selector-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.figure-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  max-height: 540px;
+  overflow-y: auto;
+  padding-right: 0.25rem;
+}
+
+.figure-item-btn {
+  appearance: none;
+  text-align: left;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-sm);
+  padding: 0.65rem 0.85rem;
+  cursor: pointer;
+  transition: background-color 150ms ease, border-color 150ms ease;
+}
+
+.figure-item-btn:hover {
+  background-color: #F7F9F4;
+  border-color: var(--border-strong);
+}
+
+.figure-item-btn.active {
+  background-color: var(--accent-active-soft);
+  border-color: var(--accent-active);
+}
+
+.figure-item-title {
+  display: block;
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--ink-primary);
+}
+
+.figure-item-sub {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+  margin-top: 0.15rem;
+}
+
+.figure-stage-box {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.figure-stage-img-wrap {
+  width: 100%;
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-xs);
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 380px;
+}
+
+.figure-stage-img {
+  max-width: 100%;
+  max-height: 480px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Buscador / Filtro del Cuadro Maestro de 13 Hipótesis */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.search-input {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  padding: 0.48rem 0.85rem;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-xs);
+  background-color: var(--bg-surface);
+  color: var(--ink-primary);
+  min-width: 280px;
+}
+
+.search-input:focus {
+  border-color: var(--accent-synoptic);
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (TABLET & MÓVIL)
+   ========================================================================== */
+
+@media (max-width: 1180px) {
+  .hero-observatory-grid,
+  .split-workbench,
+  .split-workbench-equal,
+  .simulator-grid,
+  .figure-selector-grid {
+    grid-template-columns: 1fr;
+  }
+  .funnel-pipeline {
+    grid-template-columns: 1fr 1fr;
+  }
+  .funnel-step:nth-child(2) {
+    border-right: none;
+  }
+  .funnel-step:nth-child(1),
+  .funnel-step:nth-child(2) {
+    border-bottom: 1px solid var(--border-hairline);
+  }
+}
+
+@media (max-width: 860px) {
+  .app-shell {
+    grid-template-columns: 1fr;
+  }
+  .synoptic-rail {
+    position: relative;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--border-rail);
+    padding: 0.75rem 1rem;
+  }
+  .rail-station-box {
+    padding-bottom: 0.5rem;
+  }
+  .rail-station-meta,
+  .rail-norm-legend,
+  .rail-footer {
+    display: none;
+  }
+  .rail-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0.5rem 0 0 0;
+    gap: 0.3rem;
+  }
+  .rail-nav-link {
+    padding: 0.32rem 0.55rem;
+    font-size: 0.75rem;
+  }
+  .command-header {
+    position: relative;
+    padding: 0.75rem 1rem;
+  }
+  .study-main-title {
+    font-size: 1.12rem;
+  }
+  .regime-switcher {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .regime-btn {
+    justify-content: center;
+    font-size: 0.74rem;
+    padding: 0.38rem 0.45rem;
+  }
+  .content-container {
+    padding: 1rem 1rem 3rem 1rem;
+    gap: 2rem;
+  }
+  .funnel-pipeline {
+    grid-template-columns: 1fr;
+  }
+  .funnel-step {
+    border-right: none;
+    border-bottom: 1px solid var(--border-hairline);
+  }
+}
+
+@media (max-width: 560px) {
+  .sim-controls-grid {
+    grid-template-columns: 1fr;
+  }
+}

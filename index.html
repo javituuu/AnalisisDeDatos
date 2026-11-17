@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Observatorio Estadístico e Inferencial · Estación Kingston College (SINCA 2009–2026)</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body data-regime="global">
+  <div class="app-shell">
+    <!-- ====================================================================
+         RIEL LATERAL DE NAVEGACIÓN Y REFERENCIA NORMATIVA (PIZARRA COSTERA)
+         ==================================================================== -->
+    <aside class="synoptic-rail" aria-label="Navegación del observatorio y escala normativa">
+      <div>
+        <div class="rail-station-box">
+          <h1 class="rail-station-title">Estación Kingston College</h1>
+          <p class="rail-station-meta">
+            Red Oficial SINCA · Ministerio del Medio Ambiente<br />
+            Cuenca del Gran Concepción, Región del Biobío
+          </p>
+          <div class="rail-coords">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="width:13px;height:13px;stroke:#F59E0B;">
+              <circle cx="12" cy="10" r="3"></circle>
+              <path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 7 8 11.7z"></path>
+            </svg>
+            <span>36°47'S · 73°02'O · 2009–2026</span>
+          </div>
+        </div>
+
+        <nav class="rail-nav" aria-label="Secciones del estudio estadístico">
+          <a href="#sec-sinoptico" class="rail-nav-link active">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 17l6-6 4 4 8-8"></path>
+              <path d="M17 7h4v4"></path>
+            </svg>
+            <span>Panorama Sinóptico &amp; Higiene</span>
+          </a>
+          <a href="#sec-h1-estacional" class="rail-nav-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+            </svg>
+            <span>H<sub>1</sub> · Forzamiento Estacional</span>
+          </a>
+          <a href="#sec-h2-desacople" class="rail-nav-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            <span>H<sub>2</sub> · Desacople Vehicular vs. Leña</span>
+          </a>
+          <a href="#sec-h3-econometria" class="rail-nav-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="20" x2="18" y2="10"></line>
+              <line x1="12" y1="20" x2="12" y2="4"></line>
+              <line x1="6" y1="20" x2="6" y2="14"></line>
+            </svg>
+            <span>H<sub>3</sub> · Regresión EMCO &amp; Simulador</span>
+          </a>
+          <a href="#sec-stepwise-gauss" class="rail-nav-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+            </svg>
+            <span>Stepwise BIC &amp; Gauss-Markov</span>
+          </a>
+          <a href="#sec-h4-contingencia" class="rail-nav-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+              <line x1="12" y1="9" x2="12" y2="13"></line>
+              <line x1="12" y1="17" x2="12.01" y2="17"></line>
+            </svg>
+            <span>H<sub>4</sub> · PPDA &amp; 13 Pruebas Oficiales</span>
+          </a>
+          <a href="#sec-galeria-figuras" class="rail-nav-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <circle cx="8.5" cy="8.5" r="1.5"></circle>
+              <polyline points="21 15 16 10 5 21"></polyline>
+            </svg>
+            <span>Atlas de Figuras del Estudio</span>
+          </a>
+        </nav>
+      </div>
+
+      <div>
+        <div class="rail-norm-legend">
+          <h2 class="rail-norm-heading">Umbrales GEC PM<sub>2.5</sub> (D.S. N° 6/2019)</h2>
+          <ul class="gec-scale-list">
+            <li class="gec-scale-item">
+              <span class="gec-dot-label"><span class="gec-swatch" style="background:#1F7A4C;"></span>Bueno</span>
+              <span class="num">0 – 49 µg/m³</span>
+            </li>
+            <li class="gec-scale-item">
+              <span class="gec-dot-label"><span class="gec-swatch" style="background:#B78103;"></span>Regular</span>
+              <span class="num">50 – 79 µg/m³</span>
+            </li>
+            <li class="gec-scale-item">
+              <span class="gec-dot-label"><span class="gec-swatch" style="background:#D95F02;"></span>Alerta</span>
+              <span class="num">80 – 109 µg/m³</span>
+            </li>
+            <li class="gec-scale-item">
+              <span class="gec-dot-label"><span class="gec-swatch" style="background:#B81D13;"></span>Preemergencia</span>
+              <span class="num">110 – 169 µg/m³</span>
+            </li>
+            <li class="gec-scale-item">
+              <span class="gec-dot-label"><span class="gec-swatch" style="background:#5C0E28;"></span>Emergencia</span>
+              <span class="num">&ge; 170 µg/m³</span>
+            </li>
+          </ul>
+        </div>
+
+        <footer class="rail-footer">
+          <strong>J. Benavides Ortega &amp; C. Montoya Toledo</strong>
+          Facultad de Ingeniería · UDD Concepción<br />
+          Prof. Guía: Danilo Gómez Correa<br />
+          Certamen 2 · Noviembre 2026
+        </footer>
+      </div>
+    </aside>
+
+    <!-- ====================================================================
+         SUPERFICIE PRINCIPAL DE OPERACIÓN Y DEFENSA ACADÉMICA
+         ==================================================================== -->
+    <div class="workspace-main">
+      <!-- BARRA SUPERIOR FIJA CON CONMUTADOR MAESTRO DE RÉGIMEN ATMOSFÉRICO -->
+      <header class="command-header">
+        <div class="header-title-group">
+          <h2 class="study-main-title">Modelado Estadístico Inferencial, Acoplamiento Físico y Selección Stepwise de Material Particulado (PM<sub>2.5</sub> y MP<sub>10</sub>)</h2>
+          <p class="study-subtitle">Serie Histórica Continua 2009–2026 (17.2 años · N = 893,398 observaciones brutas · 16 datasets oficiales SINCA)</p>
+        </div>
+
+        <div class="regime-switcher" role="group" aria-label="Conmutador de régimen atmosférico y cohorte analítica">
+          <button type="button" class="regime-btn active" data-regime="global" aria-pressed="true">
+            Serie Global (n=3,312)
+          </button>
+          <button type="button" class="regime-btn" data-regime="frio" aria-pressed="false">
+            Régimen Frío · Biomasa (Abr–Sep)
+          </button>
+          <button type="button" class="regime-btn" data-regime="calido" aria-pressed="false">
+            Régimen Cálido · Costero (Oct–Mar)
+          </button>
+          <button type="button" class="regime-btn" data-regime="cohorte2023" aria-pressed="false">
+            Cohorte 2023 (n=361)
+          </button>
+        </div>
+      </header>
+
+      <main class="content-container">
+        <!-- ================================================================
+             SECCIÓN 1: PANORAMA SINÓPTICO DE LA CUENCA Y EMBUDO DE DATOS
+             ================================================================ -->
+        <section id="sec-sinoptico" class="analysis-section">
+          <div class="hero-observatory-grid">
+            <!-- Columna Izquierda: Lámina Sinóptica de la Cuenca + Corte Termodinámico Interactivo -->
+            <div class="panel-surface" style="justify-content: space-between;">
+              <div class="basin-visual-stage">
+                <div class="basin-plate-backdrop">
+                  <img
+                    src="assets/cuenca_concepcion_sinoptica.jpg"
+                    alt="Ilustración científica de la cuenca del Gran Concepción y el río Biobío bajo capa de inversión térmica de subsidencia atrapando plumas residenciales de biomasa"
+                    class="basin-plate-img"
+                  />
+                  <div class="basin-plate-overlay">
+                    <div class="basin-overlay-Banner">
+                      <div>
+                        <h3 class="basin-overlay-title">Dinámica Sinóptica y Atrapamiento Termodinámico en la Cuenca del Biobío</h3>
+                        <p class="basin-overlay-desc" id="basin-dynamic-caption">
+                          Balance anual entre ventilación costera estival (Oct–Mar) y atrapamiento sinóptico invernal por quema residencial de biomasa (Abr–Sep).
+                        </p>
+                      </div>
+                      <span class="badge-pill badge-alerta" id="svg-hmix-readout">H_mix ~ 380 m</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Esquema Vectorial Físico-Termodinámico en Vivo -->
+                <div class="basin-schematic-wrap">
+                  <svg class="basin-svg" viewBox="0 0 680 210" role="img" aria-label="Esquema físico de altura de capa de mezcla e inclusión gravimétrica PM2.5 dentro de MP10">
+                    <defs>
+                      <linearGradient id="smokeGrad" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#D95F02" stop-opacity="0.72" />
+                        <stop offset="100%" stop-color="#C85A17" stop-opacity="0.18" />
+                      </linearGradient>
+                    </defs>
+
+                    <rect x="0" y="0" width="430" height="198" fill="#101822" rx="4" />
+                    <rect id="svg-smoke-trap" x="8" y="108" width="414" height="86" fill="url(#smokeGrad)" opacity="0.62" rx="2" />
+
+                    <!-- Perfil topográfico de Concepción / Río Biobío / Kingston College -->
+                    <path d="M 8 194 L 8 162 Q 45 142 82 168 T 165 178 Q 210 185 265 174 L 355 170 Q 395 148 422 158 L 422 194 Z" fill="#233142" stroke="#475B73" stroke-width="1.2" />
+
+                    <!-- Estación Kingston College -->
+                    <g transform="translate(235, 152)">
+                      <rect x="-16" y="4" width="32" height="18" fill="#121A24" stroke="#F59E0B" stroke-width="1.5" rx="2" />
+                      <line x1="0" y1="-12" x2="0" y2="4" stroke="#F59E0B" stroke-width="1.8" />
+                      <circle cx="0" cy="-14" r="3" fill="#F59E0B" />
+                      <text x="0" y="34" text-anchor="middle" fill="#E2E8F0" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="600">Estación Kingston College</text>
+                    </g>
+
+                    <!-- Plumas ascendentes de biomasa residencial -->
+                    <path d="M 125 172 Q 118 145 132 122" fill="none" stroke="#F59E0B" stroke-width="1.8" stroke-dasharray="3,3" opacity="0.85" />
+                    <path d="M 185 175 Q 178 148 192 120" fill="none" stroke="#F59E0B" stroke-width="1.8" stroke-dasharray="3,3" opacity="0.85" />
+                    <path d="M 310 171 Q 302 145 318 122" fill="none" stroke="#F59E0B" stroke-width="1.8" stroke-dasharray="3,3" opacity="0.85" />
+
+                    <!-- Línea Móvil de Inversión Térmica de Subsidencia -->
+                    <g id="svg-inversion-group" transform="translate(0, 108)">
+                      <line x1="8" y1="0" x2="422" y2="0" stroke="#FBBF24" stroke-width="2" stroke-dasharray="6,3" />
+                      <rect x="14" y="-18" width="325" height="15" fill="#121A24" opacity="0.88" rx="2" />
+                      <text id="svg-inversion-label" x="20" y="-7" fill="#FBBF24" font-family="JetBrains Mono, monospace" font-size="9.2" font-weight="600">
+                        Capa de Mezcla Media Anual (H_mix ~ 380 m)
+                      </text>
+                    </g>
+
+                    <!-- Diagrama derecho: Principio de Inclusión Gravimétrica (PM2.5 <= MP10) -->
+                    <g transform="translate(445, 6)">
+                      <rect x="0" y="0" width="225" height="190" fill="#182330" stroke="#2D3E52" rx="4" />
+                      <text x="112" y="20" text-anchor="middle" fill="#F1F5F9" font-size="10.2" font-weight="700">Inclusión Física: PM2.5 &le; MP10</text>
+                      <text x="112" y="34" text-anchor="middle" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="9">Cociente R_t = PM2.5 / MP10 &le; 1.0</text>
+
+                      <circle cx="112" cy="104" r="55" fill="#1E3A5F" stroke="#60A5FA" stroke-width="1.5" stroke-dasharray="4,2" />
+                      <text x="112" y="61" text-anchor="middle" fill="#93C5FD" font-family="JetBrains Mono, monospace" font-size="8.8">MP10 (d_a &le; 10 µm · Polvo + Humo)</text>
+
+                      <circle cx="112" cy="113" r="40" fill="#C85A17" fill-opacity="0.88" stroke="#FDBA74" stroke-width="1.8" />
+                      <text x="112" y="109" text-anchor="middle" fill="#FFFFFF" font-family="JetBrains Mono, monospace" font-size="10.2" font-weight="700">PM2.5 (71.2%)</text>
+                      <text x="112" y="123" text-anchor="middle" fill="#FFEDD5" font-family="JetBrains Mono, monospace" font-size="8.6">Combustión Biomasa</text>
+                      <text x="112" y="135" text-anchor="middle" fill="#FFEDD5" font-family="JetBrains Mono, monospace" font-size="8.6">b1 = 0.684 a 0.732</text>
+
+                      <text x="112" y="178" text-anchor="middle" fill="#CBD5E1" font-size="9.2">Cereceda-Balic et al. (2020): 65%–80%</text>
+                    </g>
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Tres pilares físicos que equilibran la columna izquierda -->
+              <div style="padding: 0.9rem 1.25rem; background-color: #FAFBF8; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.85rem; font-size: 0.78rem; color: var(--ink-secondary);">
+                <div>
+                  <strong style="color: var(--ink-primary); display: block;">1. Huella Gravimétrica</strong>
+                  Cereceda-Balic et al. (2020): el humo de leña conforma el 65%–80% del MP<sub>10</sub> invernal (pendiente empírica &beta;&#770;<sub>1</sub> &approx; 0.70).
+                </div>
+                <div>
+                  <strong style="color: var(--ink-primary); display: block;">2. Trampa Sinóptica</strong>
+                  Saide et al. (2016): inversiones térmicas de subsidencia confinan contaminantes a &lt;150 m por 3 a 5 días seguidos.
+                </div>
+                <div>
+                  <strong style="color: var(--ink-primary); display: block;">3. Control Vehicular</strong>
+                  Gramsch et al. (2021): caer el flujo automotriz reduce el NO<sub>2</sub> (−36.3%), pero deja invariante al PM<sub>2.5</sub>.
+                </div>
+              </div>
+            </div>
+
+            <!-- Columna Derecha: Matriz de Evidencia Dual del Régimen Activo -->
+            <div class="panel-surface regime-live-matrix">
+              <div class="regime-status-banner">
+                <div>
+                  <h3 class="regime-status-name" id="regime-active-name">Serie Histórica Global (2009–2026)</h3>
+                  <p class="regime-status-detail" id="regime-active-sub">17.2 años continuos · Muestra depurada y pareada bajo protocolo SMA (2024)</p>
+                </div>
+                <span class="badge-pill badge-synoptic" id="regime-active-badge">n = 3,312 días válidos</span>
+              </div>
+
+              <div class="panel-body" style="padding: 0;">
+                <table class="data-table" aria-label="Métricas paramétricas y no paramétricas del régimen seleccionado">
+                  <thead>
+                    <tr>
+                      <th>Parámetro / Sistema</th>
+                      <th class="num">Días (n)</th>
+                      <th class="num">Media &plusmn; DE / Mediana</th>
+                      <th>Contraste y Decisión</th>
+                    </tr>
+                  </thead>
+                  <tbody id="regime-metrics-tbody">
+                    <!-- Poblado dinámicamente por app.js según el régimen activo -->
+                  </tbody>
+                </table>
+              </div>
+
+              <div style="padding: 0.9rem 1.25rem; background-color: #FAFBF8; border-top: 1px solid var(--border-hairline); font-size: 0.8rem; color: var(--ink-secondary); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+                <span><strong>Estrategia Dual:</strong> Rechazo de normalidad (Shapiro-Wilk <code>W = 0.812</code>, <code>A²* = 151.16</code>) + Heterocedasticidad (Levene <code>F = 612.45</code>).</span>
+                <a href="#sec-h3-econometria" style="font-weight: 700;">Ir al Simulador EMCO &rarr;</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Embudo Algorítmico de Higiene de Datos en 4 Etapas (SMA 2024) -->
+          <div style="margin-top: 1.5rem;">
+            <div class="funnel-pipeline" role="region" aria-label="Protocolo de higiene de datos en 4 etapas">
+              <div class="funnel-step">
+                <div>
+                  <div class="funnel-step-header">
+                    <h3 class="funnel-step-title">Etapa 1 · Integración Bruta SINCA</h3>
+                    <span class="badge-pill badge-synoptic">16 CSV Oficiales</span>
+                  </div>
+                  <div class="funnel-count">893,398 reg.</div>
+                  <p class="funnel-desc">
+                    8 archivos horarios (<code>851,946</code> filas de PM<sub>2.5</sub>, MP<sub>10</sub>, CO, NO, NO<sub>2</sub>, NO<sub>x</sub>, O<sub>3</sub>, SO<sub>2</sub>) + 8 series consolidadas (<code>41,452</code> filas) entre ago. 2009 y oct. 2026.
+                  </p>
+                </div>
+                <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width: 100%;"></div></div>
+              </div>
+
+              <div class="funnel-step">
+                <div>
+                  <div class="funnel-step-header">
+                    <h3 class="funnel-step-title">Etapa 2 · Jerarquía SMA &amp; &ge;75% Horas</h3>
+                    <span class="badge-pill badge-synoptic">m_d &ge; 18h / 24h</span>
+                  </div>
+                  <div class="funnel-count">3,312 días</div>
+                  <p class="funnel-desc">
+                    Prioridad estricta <em>Validado &gt; Preliminar</em> (SMA, 2024), exclusión de derivas negativas (<code>X_d &le; 0</code>) y exigencia de &ge;18 horas válidas por día para evitar sesgo diurno.
+                  </p>
+                </div>
+                <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width: 82%;"></div></div>
+              </div>
+
+              <div class="funnel-step">
+                <div>
+                  <div class="funnel-step-header">
+                    <h3 class="funnel-step-title">Etapa 3 · Consistencia Gravimétrica</h3>
+                    <span class="badge-pill badge-alerta">PM<sub>2.5</sub> / MP<sub>10</sub> &le; 1.0</span>
+                  </div>
+                  <div class="funnel-count">3,280 días</div>
+                  <p class="funnel-desc">
+                    Intersección fecha a fecha MP<sub>10</sub>–PM<sub>2.5</sub> y poda de <strong>32 jornadas con anomalía física</strong> (<code>PM<sub>2.5</sub> &gt; MP<sub>10</sub></code> por condensación de niebla en cabezales beta).
+                  </p>
+                </div>
+                <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width: 76%;"></div></div>
+              </div>
+
+              <div class="funnel-step">
+                <div>
+                  <div class="funnel-step-header">
+                    <h3 class="funnel-step-title">Etapa 4 · Matriz Multivariable EMCO</h3>
+                    <span class="badge-pill badge-bueno">Gases + Dummies</span>
+                  </div>
+                  <div class="funnel-count">3,185 días</div>
+                  <p class="funnel-desc">
+                    Muestra analítica balanceada con vector completo de regresores (<code>MP<sub>10</sub>, CO, NO<sub>2</sub>, O<sub>3</sub></code> y variables ficticias estacionales y semanales) para modelos M1–M4 y Stepwise.
+                  </p>
+                </div>
+                <div class="funnel-bar-track"><div class="funnel-bar-fill" style="width: 72%; background-color: var(--gec-bueno);"></div></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================================
+             SECCIÓN 2: HIPÓTESIS 1 (H1) — FORZAMIENTO ESTACIONAL Y TUKEY HSD
+             ================================================================ -->
+        <section id="sec-h1-estacional" class="analysis-section">
+          <div class="section-header-bar">
+            <h2 class="section-heading">Hipótesis 1 (H<sub>1</sub>) · Forzamiento Estacional Térmico, ANOVA de 1 Factor y Post-Hoc de Tukey HSD</h2>
+            <span class="section-meta-pill">F(3, 3308) = 353.97 · &eta;<sup>2</sup> = 24.30% · Kruskal-Wallis H = 942.29 (p &lt; 10<sup>-16</sup>)</span>
+          </div>
+          <p class="section-lead">
+            En invierno y otoño la activación masiva de calefacción residencial a leña converge con inversiones térmicas de subsidencia, duplicando y hasta triplicando las concentraciones de PM<sub>2.5</sub> respecto a primavera y verano. Tanto el ANOVA paramétrico como la prueba de rangos de Kruskal-Wallis rechazan contundentemente la igualdad estacional.
+          </p>
+
+          <div class="split-workbench">
+            <!-- Panel Izquierdo: Visualizador Interactivo de 3 Vistas (Climatología / Anual / Tukey HSD) -->
+            <div class="panel-surface">
+              <div class="panel-header">
+                <div>
+                  <h3 class="panel-title">Explorador Temporal y Comparaciones Múltiples de Tukey HSD</h3>
+                  <p class="panel-subtitle">Alterna entre el ciclo anual mensual, la serie histórica 2009–2026 y los intervalos simultáneos al 95%</p>
+                </div>
+                <div class="tab-strip" role="tablist">
+                  <button type="button" class="tab-btn active" data-h1-view="monthly">Climatología Mensual</button>
+                  <button type="button" class="tab-btn" data-h1-view="yearly">Serie 2009–2026</button>
+                  <button type="button" class="tab-btn" data-h1-view="tukey">Post-Hoc Tukey HSD</button>
+                </div>
+              </div>
+              <div class="panel-body">
+                <div class="chart-stage" id="h1-chart-container">
+                  <!-- Renderizado por app.js -->
+                </div>
+                <p class="chart-caption" id="h1-chart-caption"></p>
+              </div>
+            </div>
+
+            <!-- Panel Derecho: Tablas Oficiales ANOVA / Welch / Tukey HSD -->
+            <div class="panel-surface">
+              <div class="panel-header">
+                <div>
+                  <h3 class="panel-title">Desglose por Estación Astronómica y Tabla ANOVA</h3>
+                  <p class="panel-subtitle">Partición bimodal exacta en dos regímenes estadísticamente homogéneos (Grupos A y B)</p>
+                </div>
+                <span class="badge-pill badge-alerta">Rechaza H<sub>0,1</sub></span>
+              </div>
+              <div class="panel-body" style="padding: 0;">
+                <table class="data-table" aria-label="Estadísticos de PM2.5 por estación del año">
+                  <thead>
+                    <tr>
+                      <th>Estación Astronómica</th>
+                      <th class="num">Días (n<sub>i</sub>)</th>
+                      <th class="num">Media &plusmn; DE [Mediana]</th>
+                      <th class="num">Serie Total (x&#772; / Q<sub>2</sub>)</th>
+                      <th>Grupo Tukey</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>1. Verano (Dic–Feb)</strong></td>
+                      <td class="num">760</td>
+                      <td class="num">9.14 &plusmn; 7.81 [8.00]</td>
+                      <td class="num">10.24 / 9.40</td>
+                      <td><span class="badge-pill badge-bueno">Grupo A (Basal)</span></td>
+                    </tr>
+                    <tr>
+                      <td><strong>2. Primavera (Sep–Nov)</strong></td>
+                      <td class="num">832</td>
+                      <td class="num">8.21 &plusmn; 3.72 [8.00]</td>
+                      <td class="num">12.58 / 11.20</td>
+                      <td><span class="badge-pill badge-bueno">Grupo A (Basal)</span></td>
+                    </tr>
+                    <tr style="background-color: #FDF7F2;">
+                      <td><strong>3. Otoño (Mar–May)</strong></td>
+                      <td class="num">828</td>
+                      <td class="num">19.14 &plusmn; 12.22 [16.50]</td>
+                      <td class="num">24.12 / 19.10</td>
+                      <td><span class="badge-pill badge-alerta">Grupo B (Crítico)</span></td>
+                    </tr>
+                    <tr style="background-color: #FCE8DB;">
+                      <td><strong>4. Invierno (Jun–Ago)</strong></td>
+                      <td class="num">892</td>
+                      <td class="num"><strong>19.46 &plusmn; 11.23 [18.00]</strong></td>
+                      <td class="num"><strong>33.44 / 27.80</strong></td>
+                      <td><span class="badge-pill badge-alerta">Grupo B (Crítico)</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <div style="padding: 1rem 1.25rem; border-top: 1px solid var(--border-hairline);">
+                  <h4 style="margin: 0 0 0.5rem 0; font-size: 0.88rem; color: var(--ink-primary);">Descomposición Aditiva de Varianza (SC_Total = SC_Trat + SC_Error)</h4>
+                  <div style="overflow-x:auto;">
+                  <table class="data-table" style="border: 1px solid var(--border-hairline);">
+                    <thead>
+                      <tr>
+                        <th>Fuente de Variación</th>
+                        <th class="num">g.l.</th>
+                        <th class="num">Suma Cuadrados (SC)</th>
+                        <th class="num">Media Cuad. (MC)</th>
+                        <th class="num">Estadístico F / H</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><strong>Tratamientos (Estación)</strong></td>
+                        <td class="num">3</td>
+                        <td class="num">94,302.09</td>
+                        <td class="num">31,434.03</td>
+                        <td class="num"><strong>F = 353.97 (p &lt; 0.0001)</strong></td>
+                      </tr>
+                      <tr>
+                        <td><strong>Error Residual</strong></td>
+                        <td class="num">3,308</td>
+                        <td class="num">293,761.97</td>
+                        <td class="num">88.80</td>
+                        <td class="num">&eta;<sup>2</sup> = 24.30% (Grande)</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Total / Kruskal-Wallis</strong></td>
+                        <td class="num">3,311</td>
+                        <td class="num">388,064.06</td>
+                        <td class="num">—</td>
+                        <td class="num"><strong>H(3) = 942.29 (p &lt; 10<sup>-16</sup>)</strong></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================================
+             SECCIÓN 3: HIPÓTESIS 2 (H2) — DESACOPLE VEHICULAR VS BIOMASA
+             ================================================================ -->
+        <section id="sec-h2-desacople" class="analysis-section">
+          <div class="section-header-bar">
+            <h2 class="section-heading">Hipótesis 2 (H<sub>2</sub>) · Invarianza Semanal del PM<sub>2.5</sub> frente al Desplome de Gases Vehiculares (NO<sub>2</sub>)</h2>
+            <span class="section-meta-pill">PM<sub>2.5</sub>: t = 0.88 (p = 0.3820 · d = 0.036) vs. NO<sub>2</sub>: t = 16.42 (p &lt; 0.0001 · d = 0.612)</span>
+          </div>
+          <p class="section-lead">
+            Para refutar o validar el mito de que el tráfico laboral causa las preemergencias en Concepción, se utilizó al dióxido de nitrógeno (NO<sub>2</sub>) como control negativo vehicular (Gramsch et al., 2021). Aunque el NO<sub>2</sub> cae un <strong>36.3%</strong> los fines de semana por el menor flujo automotor, el PM<sub>2.5</sub> permanece estrictamente invariante: las familias calefaccionan sus hogares con igual o mayor intensidad los sábados y domingos bajo inversiones térmicas multidiarias.
+          </p>
+
+          <div class="split-workbench-equal">
+            <!-- Gráfico Comparativo de Efecto Fin de Semana (Control Negativo Dual) -->
+            <div class="panel-surface">
+              <div class="panel-header">
+                <div>
+                  <h3 class="panel-title">Experimento de Control Negativo: Día Laboral (Lun–Vie) vs. Fin de Semana (Sáb–Dom)</h3>
+                  <p class="panel-subtitle">Comparación de medias e intervalos al 95% junto con tamaños del efecto d de Cohen</p>
+                </div>
+                <span class="badge-pill badge-synoptic">No Rechaza H<sub>0,2</sub> en PM<sub>2.5</sub></span>
+              </div>
+              <div class="panel-body">
+                <div class="chart-stage">
+                  <svg class="chart-svg" viewBox="0 0 600 275" role="img" aria-label="Gráfico de pendientes Día Laboral versus Fin de Semana para PM2.5, MP10 y NO2">
+                    <!-- Grilla horizontal -->
+                    <line x1="65" y1="35" x2="550" y2="35" stroke="#E2E6DC" />
+                    <line x1="65" y1="95" x2="550" y2="95" stroke="#E2E6DC" />
+                    <line x1="65" y1="155" x2="550" y2="155" stroke="#E2E6DC" />
+                    <line x1="65" y1="215" x2="550" y2="215" stroke="#E2E6DC" />
+
+                    <!-- Columnas Día Laboral (x=170) y Fin de Semana (x=415) -->
+                    <line x1="170" y1="25" x2="170" y2="235" stroke="#B6BEB0" stroke-width="1.5" stroke-dasharray="4,3" />
+                    <line x1="415" y1="25" x2="415" y2="235" stroke="#B6BEB0" stroke-width="1.5" stroke-dasharray="4,3" />
+                    <text x="170" y="256" text-anchor="middle" fill="#141B22" font-size="11.2" font-weight="700">DÍA LABORAL (Lun–Vie · n=2,368)</text>
+                    <text x="415" y="256" text-anchor="middle" fill="#141B22" font-size="11.2" font-weight="700">FIN DE SEMANA (Sáb–Dom · n=944)</text>
+
+                    <!-- 1. PM2.5 Invierno: 33.18 -> 34.09 (Leve alza dominical, p=0.5842) -->
+                    <line x1="170" y1="52" x2="415" y2="47" stroke="#C85A17" stroke-width="3" />
+                    <circle cx="170" cy="52" r="5.5" fill="#C85A17" />
+                    <circle cx="415" cy="47" r="5.5" fill="#C85A17" />
+                    <text x="158" y="56" text-anchor="end" fill="#C85A17" font-family="JetBrains Mono, monospace" font-size="10.2" font-weight="700">PM2.5 Inv: 33.18</text>
+                    <text x="427" y="51" text-anchor="start" fill="#C85A17" font-family="JetBrains Mono, monospace" font-size="10.2" font-weight="700">34.09 µg/m³ (+2.7% · p=0.58)</text>
+
+                    <!-- 2. PM2.5 Serie Total: 20.31 -> 19.68 (p=0.352/0.382) -->
+                    <line x1="170" y1="112" x2="415" y2="116" stroke="#1F7A4C" stroke-width="3" />
+                    <circle cx="170" cy="112" r="5.5" fill="#1F7A4C" />
+                    <circle cx="415" cy="116" r="5.5" fill="#1F7A4C" />
+                    <text x="158" y="116" text-anchor="end" fill="#1F7A4C" font-family="JetBrains Mono, monospace" font-size="10.2" font-weight="700">PM2.5 Global: 20.31</text>
+                    <text x="427" y="120" text-anchor="start" fill="#1F7A4C" font-family="JetBrains Mono, monospace" font-size="10.2" font-weight="700">19.68 µg/m³ (Invariante · d=0.04)</text>
+
+                    <!-- 3. NO2 Trazador Vehicular: 18.45 -> 11.76 (Desplome -36.3%, p<0.0001) -->
+                    <line x1="170" y1="145" x2="415" y2="205" stroke="#1B4D7E" stroke-width="3.2" stroke-dasharray="6,3" />
+                    <rect x="165" y="140" width="10" height="10" fill="#1B4D7E" />
+                    <rect x="410" y="200" width="10" height="10" fill="#1B4D7E" />
+                    <text x="158" y="150" text-anchor="end" fill="#1B4D7E" font-family="JetBrains Mono, monospace" font-size="10.2" font-weight="700">NO2 Vehicular: 18.45</text>
+                    <text x="427" y="209" text-anchor="start" fill="#1B4D7E" font-family="JetBrains Mono, monospace" font-size="10.2" font-weight="700">11.76 µg/m³ (−36.3% · p&lt;0.0001)</text>
+
+                    <!-- Etiqueta explicativa libre de colisión -->
+                    <rect x="195" y="202" width="178" height="22" fill="#EFF4F8" stroke="#1B4D7E" rx="3" />
+                    <text x="284" y="217" text-anchor="middle" fill="#1B4D7E" font-size="9.6" font-weight="700">Caída vehicular: −36.3% (d = 0.612)</text>
+                  </svg>
+                </div>
+                <p class="chart-caption">
+                  <span><strong>Prueba de atribución causal:</strong> La fuerte contracción del tráfico de fin de semana desploma el NO<sub>2</sub>, pero no reduce el PM<sub>2.5</sub>.</span>
+                </p>
+              </div>
+            </div>
+
+            <!-- Tabla Completa de Contrastes Paramétricos y No Paramétricos por Tipo de Día -->
+            <div class="panel-surface">
+              <div class="panel-header">
+                <div>
+                  <h3 class="panel-title">Matriz de Contrastes por Tipo de Día (Welch &amp; Mann-Whitney)</h3>
+                  <p class="panel-subtitle">Evaluación sobre material particulado y gases de combustión vehicular</p>
+                </div>
+                <span class="badge-pill badge-bueno">Tabla Oficial 6</span>
+              </div>
+              <div class="panel-body" style="padding: 0;">
+                <table class="data-table" aria-label="Contraste de hipótesis por tipo de día">
+                  <thead>
+                    <tr>
+                      <th>Variable / Cohorte</th>
+                      <th class="num">Laboral [Med]</th>
+                      <th class="num">Fin Semana [Med]</th>
+                      <th class="num">t_Welch (Valor-p)</th>
+                      <th>Efecto y Decisión</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>PM<sub>2.5</sub> (Cert. 2)</strong></td>
+                      <td class="num">14.29 &plusmn; 10.9 [11.0]</td>
+                      <td class="num">13.93 &plusmn; 10.7 [10.0]</td>
+                      <td class="num">t = 0.88 (p = 0.3820)</td>
+                      <td><span class="badge-pill badge-synoptic">Invarianza (d=0.036)</span></td>
+                    </tr>
+                    <tr>
+                      <td><strong>PM<sub>2.5</sub> (Serie Total)</strong></td>
+                      <td class="num">20.31 &plusmn; 17.8 [15.1]</td>
+                      <td class="num">19.68 &plusmn; 17.5 [14.8]</td>
+                      <td class="num">t = 0.93 (p = 0.3520)</td>
+                      <td><span class="badge-pill badge-synoptic">Invarianza (d=0.036)</span></td>
+                    </tr>
+                    <tr>
+                      <td><strong>PM<sub>2.5</sub> (Invierno)</strong></td>
+                      <td class="num">33.18 &plusmn; 22.7 [27.6]</td>
+                      <td class="num"><strong>34.09 &plusmn; 23.3 [28.2]</strong></td>
+                      <td class="num">t = −0.55 (p = 0.5842)</td>
+                      <td><span class="badge-pill badge-synoptic">Invarianza (d=−0.04)</span></td>
+                    </tr>
+                    <tr>
+                      <td><strong>MP<sub>10</sub> Pareado</strong></td>
+                      <td class="num">26.66 &plusmn; 16.1 [22.5]</td>
+                      <td class="num">23.33 &plusmn; 14.8 [20.4]</td>
+                      <td class="num">t = 7.10 (p &lt; 0.0001)</td>
+                      <td><span class="badge-pill badge-regular">Polvo vial (d=0.115)</span></td>
+                    </tr>
+                    <tr style="background-color: #EFF4F8;">
+                      <td><strong>NO<sub>2</sub> Vehicular</strong></td>
+                      <td class="num"><strong>18.45 &plusmn; 8.8 [17.2]</strong></td>
+                      <td class="num"><strong>11.76 &plusmn; 7.2 [10.4]</strong></td>
+                      <td class="num"><strong>t = 16.42 (p &lt; 0.0001)</strong></td>
+                      <td><span class="badge-pill badge-alerta">Cae −36.3% (d=0.612)</span></td>
+                    </tr>
+                    <tr>
+                      <td><strong>CO Combustión</strong></td>
+                      <td class="num">0.62 &plusmn; 0.50 [0.46]</td>
+                      <td class="num">0.48 &plusmn; 0.45 [0.35]</td>
+                      <td class="num">t = 7.74 (p &lt; 0.0001)</td>
+                      <td><span class="badge-pill badge-regular">Cae −22.6% (d=0.288)</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================================
+             SECCIÓN 4: HIPÓTESIS 3 (H3) — ECONOMETRÍA EMCO Y SIMULADOR EN VIVO
+             ================================================================ -->
+        <section id="sec-h3-econometria" class="analysis-section">
+          <div class="section-header-bar">
+            <h2 class="section-heading">Hipótesis 3 (H<sub>3</sub>) · Modelado Econométrico EMCO (HC3) y Simulador Predictivo en Vivo</h2>
+            <span class="section-meta-pill">&beta;&#770;<sub>1</sub> = 0.6989 (M1) · R<sup>2</sup> = 82.90% (M3) · Cambio F(4, 3176) = 498.44 (p &lt; 10<sup>-16</sup>)</span>
+          </div>
+          <p class="section-lead">
+            El acoplamiento gravimétrico entre MP<sub>10</sub> y PM<sub>2.5</sub> converge exactamente al rango teórico de la quema de biomasa (<code>0.65 &le; &beta;<sub>1</sub> &le; 0.80</code>, Cereceda-Balic et al., 2020). Al incorporar el monóxido de carbono (CO, trazador pirogénico con <code>t_c = 14.32</code>) y las variables ficticias estacionales, la varianza explicada asciende al <strong>82.90%</strong> con un error RMSE de apenas <code>4.465 µg/m³</code>. Usa el simulador para evaluar cualquier escenario atmosférico en las 5 especificaciones.
+          </p>
+
+          <div class="simulator-grid">
+            <!-- Columna Izquierda: Dispersión Interactiva Real + Filtros por Estación -->
+            <div class="panel-surface">
+              <div class="panel-header">
+                <div>
+                  <h3 class="panel-title">Acoplamiento Gravimétrico Real PM<sub>2.5</sub> vs. MP<sub>10</sub> (n = 3,280)</h3>
+                  <p class="panel-subtitle">Recta EMCO Global (&beta;&#770;<sub>1</sub> = 0.6989), Régimen Frío (&beta;&#770;<sub>1</sub> = 0.7318) y Frontera 1:1</p>
+                </div>
+                <div class="tab-strip" role="group" aria-label="Filtrar dispersión por estación">
+                  <button type="button" class="tab-btn active" data-scatter-filter="ALL">Todas</button>
+                  <button type="button" class="tab-btn" data-scatter-filter="I">Invierno</button>
+                  <button type="button" class="tab-btn" data-scatter-filter="O">Otoño</button>
+                  <button type="button" class="tab-btn" data-scatter-filter="P">Primavera</button>
+                  <button type="button" class="tab-btn" data-scatter-filter="V">Verano</button>
+                </div>
+              </div>
+              <div class="panel-body">
+                <div class="chart-stage">
+                  <svg id="h3-scatter-svg" class="chart-svg" viewBox="0 0 620 350" role="img" aria-label="Diagrama de dispersión interactivo MP10 vs PM2.5"></svg>
+                </div>
+                <p class="chart-caption">
+                  <span><strong>Línea negra:</strong> M1 Global (&beta;&#770;<sub>1</sub>=0.699) · <strong>Segmentada ámbar:</strong> Frío (&beta;&#770;<sub>1</sub>=0.732) · <strong>Diagonal roja:</strong> Límite físico PM<sub>2.5</sub> = MP<sub>10</sub></span>
+                </p>
+
+                <!-- Verificación Algebraica de Propiedades EMCO -->
+                <div style="margin-top: 1rem; padding: 0.75rem 0.9rem; background-color: #F7F8F4; border: 1px solid var(--border-hairline); border-radius: var(--radius-xs); font-size: 0.79rem; color: var(--ink-secondary);">
+                  <strong>Propiedades Algebraicas Verificadas del Estimador EMCO (n = 3,280):</strong><br />
+                  <code>&Sigma; e_i = -1.40&times;10<sup>-12</sup> &approx; 0</code> · <code>&Sigma; y_i = &Sigma; y&#770;_i = 46,575.00</code> · Centroide exacto <code>(x&#772;=28.91, y&#772;=14.20)</code> · Ortogonalidad <code>&Sigma; x_i&middot;e_i = 0</code> y <code>&Sigma; y&#770;_i&middot;e_i = 0</code>.
+                </div>
+
+                <!-- Estabilidad Estructural de la Pendiente Gravimétrica (HC3) -->
+                <div style="margin-top: 1rem;">
+                  <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:0.4rem;">
+                    <strong style="font-size:0.83rem; color:var(--ink-primary);">Estabilidad Estructural del Acoplamiento &beta;&#770;<sub>1</sub> (Errores Robustos HC3)</strong>
+                    <span style="font-size:0.72rem; color:var(--ink-muted);">Rango teórico biomasa: [0.65, 0.80]</span>
+                  </div>
+                  <div style="overflow-x:auto;">
+                  <table class="data-table" style="border: 1px solid var(--border-hairline);">
+                    <thead>
+                      <tr>
+                        <th>Especificación / Régimen</th>
+                        <th class="num">n</th>
+                        <th class="num">Pendiente &beta;&#770;<sub>1</sub> [EE HC3]</th>
+                        <th class="num">IC 95%</th>
+                        <th class="num">R<sup>2</sup></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><strong>Global Histórico (2009–2026)</strong></td>
+                        <td class="num">3,280</td>
+                        <td class="num"><strong>0.6840</strong> [0.0098]</td>
+                        <td class="num">[0.665, 0.703]</td>
+                        <td class="num">78.50%</td>
+                      </tr>
+                      <tr style="background-color:#FDF7F2;">
+                        <td><strong>Régimen Frío / Biomasa</strong></td>
+                        <td class="num">1,648</td>
+                        <td class="num"><strong>0.7318</strong> [0.0124]</td>
+                        <td class="num">[0.708, 0.756]</td>
+                        <td class="num">82.12%</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Cohorte Transversal 2023</strong></td>
+                        <td class="num">361</td>
+                        <td class="num"><strong>0.7039</strong> [0.0241]</td>
+                        <td class="num">[0.657, 0.751]</td>
+                        <td class="num">80.53%</td>
+                      </tr>
+                      <tr>
+                        <td><strong>M1 RLS Base (Certamen 2)</strong></td>
+                        <td class="num">3,280</td>
+                        <td class="num"><strong>0.6989</strong> (0.0082)</td>
+                        <td class="num">[0.683, 0.715]</td>
+                        <td class="num">68.78%</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Columna Derecha: Simulador / Calculadora Predictiva EMCO en Vivo -->
+            <div class="panel-surface">
+              <div class="panel-header">
+                <div>
+                  <h3 class="panel-title">Simulador Predictivo Multivariable EMCO &amp; Termómetro Normativo</h3>
+                  <p class="panel-subtitle">Imputación operativa en tiempo real bajo las 5 ecuaciones estimadas en Kingston College</p>
+                </div>
+                <span class="badge-pill badge-bueno" id="sim-gec-badge">Bueno (0–49 µg/m³)</span>
+              </div>
+              <div class="panel-body">
+                <div class="preset-Toolbar" role="group" aria-label="Escenarios atmosféricos predefinidos">
+                  <button type="button" class="preset-chip" data-sim-preset="verano-ventilado">Tarde Estival Ventilada</button>
+                  <button type="button" class="preset-chip" data-sim-preset="centroide">Centroide Muestral</button>
+                  <button type="button" class="preset-chip" data-sim-preset="domingo-frio">Domingo Frío sin Tráfico</button>
+                  <button type="button" class="preset-chip" data-sim-preset="invierno-critico">Episodio Invernal Alerta</button>
+                  <button type="button" class="preset-chip" data-sim-preset="preemergencia">Preemergencia Extrema</button>
+                </div>
+
+                <!-- Termómetro Normativo PPDA (D.S. 6/2019) Integrado -->
+                <div class="ppda-thermometer-card" id="ppda-thermometer-card">
+                  <div class="ppda-thermometer-head">
+                    <div class="ppda-thermometer-toprow">
+                      <h4 class="ppda-thermometer-title">Termómetro Normativo PPDA (D.S. N° 6/2019)</h4>
+                      <span class="ppda-model-chip" id="sim-active-model-label">Modelo M* BIC (7 vars) · Se = 4.469</span>
+                    </div>
+                    <p class="ppda-thermometer-sub">Meta Norma Diaria = 50 µg/m³ · Alerta &ge; 80 · Preemergencia &ge; 110 · Emergencia &ge; 170</p>
+                  </div>
+
+                  <div class="ppda-gauge-wrap">
+                    <svg id="ppda-gauge-svg" class="ppda-gauge-svg" viewBox="0 0 460 220" role="img" aria-label="Termómetro Normativo PPDA de concentración predicha de PM2.5"></svg>
+                  </div>
+
+                  <div class="ppda-zone-strip" aria-hidden="true">
+                    <span class="ppda-zone-item"><span class="gec-swatch" style="background:#8CE0B0;border:1px solid #1F7A4C;"></span>Bueno 0–49</span>
+                    <span class="ppda-zone-item"><span class="gec-swatch" style="background:#F4D03F;border:1px solid #9A6B00;"></span>Regular 50–79</span>
+                    <span class="ppda-zone-item"><span class="gec-swatch" style="background:#F0944D;border:1px solid #C85A17;"></span>Alerta 80–109</span>
+                    <span class="ppda-zone-item"><span class="gec-swatch" style="background:#EA8680;border:1px solid #B81D13;"></span>Preem. 110–169</span>
+                    <span class="ppda-zone-item"><span class="gec-swatch" style="background:#A91D2E;border:1px solid #5C0E28;"></span>Emerg. &ge;170</span>
+                  </div>
+                </div>
+
+                <!-- Sliders de Regresores Continuos -->
+                <div class="sim-controls-grid">
+                  <div class="control-group">
+                    <div class="control-label-row">
+                      <label class="control-label" for="sim-mp10">MP<sub>10</sub> Respirable (X<sub>1</sub>)</label>
+                      <output class="control-output" id="out-mp10">45 µg/m³</output>
+                    </div>
+                    <input type="range" id="sim-mp10" class="range-slider" min="5" max="170" step="1" value="45" />
+                  </div>
+
+                  <div class="control-group">
+                    <div class="control-label-row">
+                      <label class="control-label" for="sim-co">CO Monóxido (X<sub>2</sub>)</label>
+                      <output class="control-output" id="out-co">0.65 mg/m³</output>
+                    </div>
+                    <input type="range" id="sim-co" class="range-slider" min="0.05" max="3.50" step="0.05" value="0.65" />
+                  </div>
+
+                  <div class="control-group">
+                    <div class="control-label-row">
+                      <label class="control-label" for="sim-no2">NO<sub>2</sub> Vehicular (X<sub>3</sub>)</label>
+                      <output class="control-output" id="out-no2">16.5 µg/m³</output>
+                    </div>
+                    <input type="range" id="sim-no2" class="range-slider" min="2" max="65" step="0.5" value="16.5" />
+                  </div>
+
+                  <div class="control-group">
+                    <div class="control-label-row">
+                      <label class="control-label" for="sim-o3">O<sub>3</sub> Ozono (X<sub>4</sub>)</label>
+                      <output class="control-output" id="out-o3">18.0 µg/m³</output>
+                    </div>
+                    <input type="range" id="sim-o3" class="range-slider" min="2" max="70" step="0.5" value="18.0" />
+                  </div>
+                </div>
+
+                <!-- Selectores de Variables Dummy (Estación y Tipo de Día) -->
+                <div class="sim-controls-grid" style="margin-bottom: 1rem;">
+                  <div>
+                    <label class="control-label" for="sim-season" style="display:block; margin-bottom:0.3rem;">Estación Astronómica (Dummies)</label>
+                    <select id="sim-season" class="search-input" style="width:100%; min-width:0;">
+                      <option value="Invierno" selected>Invierno (+8.77 µg/m³)</option>
+                      <option value="Otoño">Otoño (+7.36 µg/m³)</option>
+                      <option value="Primavera">Primavera (+2.16 µg/m³)</option>
+                      <option value="Verano">Verano (Base = 0)</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="control-label" for="sim-daytype" style="display:block; margin-bottom:0.3rem;">Tipo de Día Semanal (Es_FDS)</label>
+                    <select id="sim-daytype" class="search-input" style="width:100%; min-width:0;">
+                      <option value="Laboral" selected>Día Laboral (Lun–Vie · 0)</option>
+                      <option value="FDS">Fin de Semana (+1.84 µg/m³)</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Tabla comparativa de predicción en las 5 especificaciones -->
+                <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:0.35rem; gap:0.5rem;">
+                  <span style="font-size:0.78rem; font-weight:700; color:var(--ink-secondary);">Comparativa Simultánea de las 5 Especificaciones</span>
+                  <span style="font-size:0.73rem; color:var(--ink-muted);">Clic en cualquier modelo para proyectarlo en el termómetro</span>
+                </div>
+                <div style="overflow-x:auto;">
+                <table class="data-table" style="border: 1px solid var(--border-hairline);">
+                  <thead>
+                    <tr>
+                      <th>Especificación Econométrica</th>
+                      <th class="num">p</th>
+                      <th class="num">R<sup>2</sup></th>
+                      <th class="num">BIC</th>
+                      <th class="num">PM<sub>2.5</sub> Predicho</th>
+                      <th>Estado GEC</th>
+                    </tr>
+                  </thead>
+                  <tbody id="sim-models-tbody">
+                    <!-- Poblado en vivo por app.js -->
+                  </tbody>
+                </table>
+                </div>
+
+                <div class="equation-box">
+                  <div><strong>Ecuación Óptima Stepwise BIC (p = 7 · n = 3,185):</strong></div>
+                  <div><code>PM&#770;<sub>2.5</sub> = -8.0426 + <span class="coef-hi">0.6126&middot;MP<sub>10</sub></span> + <span class="coef-hi">4.3327&middot;CO</span> - 0.0855&middot;O<sub>3</sub> + <span class="coef-hi">7.3559&middot;D_Oto</span> + <span class="coef-hi">8.7724&middot;D_Inv</span> + 2.1613&middot;D_Pri + 1.8398&middot;Es_FDS</code></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================================
+             SECCIÓN 5: SELECCIÓN STEPWISE (BACKWARD/FORWARD) Y GAUSS-MARKOV
+             ================================================================ -->
+        <section id="sec-stepwise-gauss" class="analysis-section">
+          <div class="section-header-bar">
+            <h2 class="section-heading">Selección Óptima de Variables Stepwise (BIC) y Auditoría de los 6 Supuestos de Gauss-Markov</h2>
+            <span class="section-meta-pill">Convergencia Backward &amp; Forward: p = 7 regresores · BIC_mín = 9,601.54</span>
+          </div>
+          <p class="section-lead">
+            En muestras masivas (<code>n = 3,185</code>), predictores colineales como el NO<sub>2</sub> alcanzan significancia marginal (<code>p = 0.0125</code>) aportando apenas un <code>+0.03%</code> de R<sup>2</sup>. Al penalizar la complejidad con el Criterio Bayesiano de Schwarz (<code>k&middot;ln(n) &approx; 8.07</code> por parámetro), tanto <em>Backward Elimination</em> como <em>Forward Selection</em> descartan al NO<sub>2</sub> y convergen al mismo modelo parsimonioso de 7 regresores.
+          </p>
+
+          <div class="split-workbench">
+            <!-- Bitácora e iteraciones de Forward / Backward Stepwise -->
+            <div class="panel-surface">
+              <div class="panel-header">
+                <div>
+                  <h3 class="panel-title">Trayectoria de Optimización Stepwise (Criterio BIC vs. R<sup>2</sup> Ajustado)</h3>
+                  <p class="panel-subtitle">Secuencia de entrada Forward Selection (Pasos 0 al 8) y poda Backward en el Paso 8</p>
+                </div>
+                <span class="badge-pill badge-bueno">Excluye NO<sub>2</sub> por Redundancia</span>
+              </div>
+              <div class="panel-body">
+                <div class="chart-stage">
+                  <svg id="stepwise-svg" class="chart-svg" viewBox="0 0 600 250" role="img" aria-label="Curva de descenso de BIC y ascenso de R2 ajustado en selección Stepwise"></svg>
+                </div>
+                <p class="chart-caption">
+                  <span><strong>Línea continua azul:</strong> Criterio BIC (escala izquierda) · <strong>Segmentada ámbar:</strong> R<sup>2</sup> Ajustado % · <strong>Punto verde:</strong> Mínimo global BIC en P7 (+O<sub>3</sub>)</span>
+                </p>
+
+                <div style="margin-top: 1rem;">
+                  <div style="overflow-x:auto;">
+                  <table class="data-table" style="border: 1px solid var(--border-hairline);">
+                    <thead>
+                      <tr>
+                        <th class="num">Paso</th>
+                        <th>Acción y Justificación Econométrica</th>
+                        <th class="num">p</th>
+                        <th class="num">R<sup>2</sup>_adj</th>
+                        <th class="num">BIC</th>
+                      </tr>
+                    </thead>
+                    <tbody id="stepwise-tbody">
+                      <!-- Poblado por app.js -->
+                    </tbody>
+                  </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Auditoría de los 6 Supuestos de Gauss-Markov y Coeficientes VIF -->
+            <div class="panel-surface">
+              <div class="panel-header">
+                <div>
+                  <h3 class="panel-title">Auditoría Econométrica de los 6 Supuestos de Gauss-Markov</h3>
+                  <p class="panel-subtitle">Verificación sobre residuos EMCO, Factores de Inflación de Varianza (VIF) y corrección HC3</p>
+                </div>
+                <span class="badge-pill badge-synoptic">máx VIF = 2.14 &ll; 5.0</span>
+              </div>
+              <div class="panel-body" style="padding: 0;">
+                <table class="data-table" aria-label="Diagnóstico de los 6 supuestos de Gauss-Markov">
+                  <thead>
+                    <tr>
+                      <th>Supuesto de Gauss-Markov</th>
+                      <th class="num">Métrica Empírica</th>
+                      <th>Resultado y Tratamiento Robusto</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>1. Linealidad y Esperanza Nula</strong><br /><code>E[&epsilon;_i | X] = 0</code></td>
+                      <td class="num"><code>&Sigma; e&#770;_i = -1.4&times;10<sup>-12</sup></code><br /><code>X'e&#770; = 0</code></td>
+                      <td>Cumplido exactamente por ortogonalidad de las ecuaciones normales de MCO.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>2. Ausencia de Multicolinealidad</strong><br /><code>rango(X) = p + 1</code></td>
+                      <td class="num"><code>VIF &isin; [1.04, 2.14]</code><br />Umbral: <code>VIF &lt; 5.0</code></td>
+                      <td>Cumplido holgadamente: MP<sub>10</sub> (1.59), CO (1.70), NO<sub>2</sub> (2.14), O<sub>3</sub> (1.16), Dummies (&le;1.75).</td>
+                    </tr>
+                    <tr>
+                      <td><strong>3. Homocedasticidad</strong><br />Test de Breusch-Pagan</td>
+                      <td class="num">M3: <code>LM = 690.9</code><br />M4 Log: <code>LM = 124.8</code></td>
+                      <td>En escala lineal hay cono invernal; la especificación Log-Log reduce LM en <strong>−86%</strong> y se blindan inferencias con errores <strong>White-MacKinnon HC3</strong>.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>4. No Autocorrelación</strong><br />Test de Durbin-Watson</td>
+                      <td class="num"><code>d = 0.735</code><br />(<code>&rho;<sub>1</sub> = 0.63</code>)</td>
+                      <td>Refleja la persistencia física de episodios sinópticos de 3–5 días (Saide et al., 2016). Estimadores MCO siguen siendo insesgados y consistentes.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>5. Puntos Influyentes</strong><br />Distancia de Cook (D<sub>i</sub>)</td>
+                      <td class="num"><code>máx D_i = 0.387</code><br />Umbral: <code>D_i &lt; 1.0</code></td>
+                      <td>Ninguna observación diaria supera el umbral crítico de Cook (<code>D_i = 1.0</code>), confirmando estabilidad estructural de los hiperplanos.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>6. Normalidad de Residuos</strong><br />Test KS sobre e&#770;<sub>i</sub></td>
+                      <td class="num">M1: <code>D = 0.0666</code><br />M3: <code>D = 0.0348</code></td>
+                      <td>La inclusión de gases y dummies reduce la asimetría residual de <code>-0.79</code> a <code>-0.36</code>; por TCL (<code>n = 3,185</code>) la inferencia asintótica es exacta.</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <div style="padding: 1rem 1.25rem; border-top: 1px solid var(--border-hairline); background-color: #FAFBF8;">
+                  <h4 style="margin: 0 0 0.45rem 0; font-size: 0.86rem;">Estimadores e Intervalos de Confianza al 95% — Modelo 3 vs. Modelo 4 Log-Log</h4>
+                  <div style="font-size: 0.8rem; color: var(--ink-secondary); line-height: 1.55;">
+                    &bull; <strong>Salto Basal Estacional (M3):</strong> En Invierno el nivel basal de PM<sub>2.5</sub> sube en <code>+8.827 µg/m³</code> (<code>t = 37.33, IC 95%: [8.36, 9.29]</code>) y en Otoño en <code>+7.396 µg/m³</code> (<code>t = 31.47</code>) a igual nivel de MP<sub>10</sub> y gases.<br />
+                    &bull; <strong>Elasticidad Log-Log (M4):</strong> <code>ln(PM<sub>2.5</sub>) = -0.6957 + 0.9631&middot;ln(MP<sub>10</sub>) + 0.1689&middot;ln(CO) + 0.4450&middot;D_Oto + 0.5321&middot;D_Inv</code>, logrando el menor error re-transformado del estudio (<code>RMSE = 3.860 µg/m³</code>).
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================================
+             SECCIÓN 6: HIPÓTESIS 4 (H4) — CONTINGENCIA PPDA Y 13 PRUEBAS
+             ================================================================ -->
+        <section id="sec-h4-contingencia" class="analysis-section">
+          <div class="section-header-bar">
+            <h2 class="section-heading">Hipótesis 4 (H<sub>4</sub>) · Contingencia Normativa PPDA (D.S. N° 6/2019) y Cuadro Maestro de las 13 Pruebas</h2>
+            <span class="section-meta-pill">Por Día: &chi;<sup>2</sup> = 1.3449 (p = 0.7185 · V = 0.020) | Por Régimen: &chi;<sup>2</sup> = 238.64 (p &lt; 10<sup>-16</sup> · V = 0.268)</span>
+          </div>
+          <p class="section-lead">
+            El cruce categórico de los niveles oficiales del Plan de Prevención y Descontaminación Atmosférica (PPDA) consolida la conclusión de política pública: el <strong>100% de las Alertas, Preemergencias y Emergencias</strong> ocurren en el Período Frío (Abr–Sep), pero su probabilidad de ocurrencia es estadísticamente idéntica en días laborales y fines de semana (<code>Odds Ratio = 1.08, IC 95%: [0.79, 1.47]</code>).
+          </p>
+
+          <!-- Tabla Comparativa de Contingencia Dual (Régimen Térmico vs Tipo de Día) -->
+          <div class="panel-surface" style="margin-bottom: 1.75rem;">
+            <div class="panel-header">
+              <div>
+                <h3 class="panel-title">Tabla de Contingencia Cruzada: Categorías Normativas PPDA (D.S. N° 6/2019) según Régimen Térmico y Tipo de Día</h3>
+                <p class="panel-subtitle">Frecuencias observadas, porcentajes por columna y residuos estandarizados de Pearson [e<sub>ij</sub>] sobre n = 3,312 días</p>
+              </div>
+              <span class="badge-pill badge-bueno">Independencia Semanal Confirmada</span>
+            </div>
+            <div class="panel-body" style="padding: 0; overflow-x: auto;">
+              <table class="data-table" aria-label="Tabla de contingencia de niveles de alerta PPDA">
+                <thead>
+                  <tr>
+                    <th>Categoría Normativa PPDA (PM<sub>2.5</sub> 24h)</th>
+                    <th class="num">Período Cálido (Oct–Mar) [e<sub>ij</sub>]</th>
+                    <th class="num">Período Frío (Abr–Sep) [e<sub>ij</sub>]</th>
+                    <th class="num">Día Laboral (Lun–Vie)</th>
+                    <th class="num">Fin de Semana (Sáb–Dom)</th>
+                    <th class="num">Proporción Lab / FDS (Cert. 2)</th>
+                    <th class="num">Total Histórico</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="badge-pill badge-bueno">1. Bueno (0–49 µg/m³)</span></td>
+                    <td class="num">1,645 (99.82%) [+15.42]</td>
+                    <td class="num">1,449 (87.08%) [−15.42]</td>
+                    <td class="num">2,209 (93.29%)</td>
+                    <td class="num">885 (93.75%)</td>
+                    <td class="num">71.4% / 28.6% (Esp: 71.4%/28.6%)</td>
+                    <td class="num"><strong>3,094 (93.42%)</strong></td>
+                  </tr>
+                  <tr>
+                    <td><span class="badge-pill badge-regular">2. Regular (50–79 µg/m³)</span></td>
+                    <td class="num">3 (0.18%) [−11.96]</td>
+                    <td class="num">152 (9.13%) [+11.96]</td>
+                    <td class="num">114 (4.81%)</td>
+                    <td class="num">41 (4.34%)</td>
+                    <td class="num">74.1% / 25.9%</td>
+                    <td class="num"><strong>155 (4.68%)</strong></td>
+                  </tr>
+                  <tr>
+                    <td><span class="badge-pill badge-alerta">3. Alerta (80–109 µg/m³)</span></td>
+                    <td class="num">0 (0.00%) [−6.84]</td>
+                    <td class="num"><strong>47 (2.82%) [+6.84]</strong></td>
+                    <td class="num">34 (1.44%)</td>
+                    <td class="num">13 (1.38%)</td>
+                    <td class="num">100.0% en Invierno/Otoño</td>
+                    <td class="num"><strong>47 (1.42%)</strong></td>
+                  </tr>
+                  <tr>
+                    <td><span class="badge-pill badge-preemergencia">4. Preemergencia (110–169)</span></td>
+                    <td class="num">0 (0.00%) [−3.74]</td>
+                    <td class="num"><strong>14 (0.84%) [+3.74]</strong></td>
+                    <td class="num">10 (0.42%)</td>
+                    <td class="num">4 (0.42%)</td>
+                    <td class="num">50.0% / 50.0% en serie podada</td>
+                    <td class="num"><strong>14 (0.42%)</strong></td>
+                  </tr>
+                  <tr>
+                    <td><span class="badge-pill badge-emergencia">5. Emergencia (&ge; 170 µg/m³)</span></td>
+                    <td class="num">0 (0.00%) [−1.41]</td>
+                    <td class="num"><strong>2 (0.12%) [+1.41]</strong></td>
+                    <td class="num">1 (0.04%)</td>
+                    <td class="num">1 (0.11%)</td>
+                    <td class="num">50.0% / 50.0%</td>
+                    <td class="num"><strong>2 (0.06%)</strong></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Cuadro Maestro Interactivo de las 13 Pruebas de Hipótesis Oficiales -->
+          <div class="panel-surface">
+            <div class="panel-header">
+              <div>
+                <h3 class="panel-title">Cuadro Maestro Oficial: Síntesis Auditada de las 13 Pruebas de Hipótesis del Estudio (&alpha; = 0.05)</h3>
+                <p class="panel-subtitle">Filtra por familia estadística o busca por nombre de test, estadístico o variable</p>
+              </div>
+              <div class="tab-strip" role="group" aria-label="Filtrar pruebas de hipótesis por familia">
+                <button type="button" class="tab-btn active" data-test-cat="all">Todas (13)</button>
+                <button type="button" class="tab-btn" data-test-cat="normalidad">Normalidad y Atípicos (3)</button>
+                <button type="button" class="tab-btn" data-test-cat="regresion">Correlación y EMCO (5)</button>
+                <button type="button" class="tab-btn" data-test-cat="estacional">Estación y Día (4)</button>
+                <button type="button" class="tab-btn" data-test-cat="contingencia">Contingencia &chi;<sup>2</sup> (1)</button>
+              </div>
+            </div>
+            <div class="panel-body">
+              <div class="filter-bar">
+                <input
+                  type="search"
+                  id="test-search-input"
+                  class="search-input"
+                  placeholder="Buscar prueba (ej. Grubbs, Welch, Tukey, Kruskal, Spearman, BIC)..."
+                  aria-label="Buscar en las 13 pruebas de hipótesis"
+                />
+                <span style="font-size: 0.8rem; color: var(--ink-muted);">Todas las decisiones verificadas a nivel nominal <code>&alpha; = 0.05</code> y <code>&alpha; = 0.01</code>.</span>
+              </div>
+
+              <div style="overflow-x: auto;">
+                <table class="data-table" style="border: 1px solid var(--border-hairline);" aria-label="Cuadro maestro de las 13 pruebas de hipótesis">
+                  <thead>
+                    <tr>
+                      <th class="num">N°</th>
+                      <th>Prueba / Contraste Estadístico</th>
+                      <th>Hipótesis en Lenguaje Natural (H<sub>0</sub> vs. H<sub>1</sub>)</th>
+                      <th class="num">Formulación Matemática</th>
+                      <th class="num">Estadístico Empírico / Criterio</th>
+                      <th>Decisión e Interpretación</th>
+                    </tr>
+                  </thead>
+                  <tbody id="master-tests-tbody">
+                    <!-- Poblado dinámicamente por app.js -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================================
+             SECCIÓN 7: ATLAS DE FIGURAS ORIGINALES DEL ESTUDIO (ALTA RES.)
+             ================================================================ -->
+        <section id="sec-galeria-figuras" class="analysis-section">
+          <div class="section-header-bar">
+            <h2 class="section-heading">Atlas de Evidencia Gráfica Original del Paper (Certamen 2 · Kingston College)</h2>
+            <span class="section-meta-pill">11 Láminas Estadísticas Oficiales Generadas en Python</span>
+          </div>
+          <p class="section-lead">
+            Inspección directa de las figuras vectoriales y de alta resolución incluidas en la publicación científica (<code>paper_certamen2/figuras/</code>), abarcando desde la completitud temporal MAR y la poda de atípicos hasta los diagnósticos de Gauss-Markov y las curvas Stepwise.
+          </p>
+
+          <div class="figure-selector-grid">
+            <div class="figure-list" id="figure-selector-list" role="listbox" aria-label="Lista de figuras del estudio">
+              <!-- Botones generados por app.js -->
+            </div>
+
+            <div class="figure-stage-box">
+              <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5rem;">
+                <h3 style="margin: 0; font-size: 1.05rem; color: var(--ink-primary);" id="figure-stage-title">Cargando figura...</h3>
+                <code style="font-size: 0.75rem; color: var(--ink-muted);" id="figure-stage-path"></code>
+              </div>
+              <div class="figure-stage-img-wrap">
+                <img id="figure-stage-img" class="figure-stage-img" src="paper_certamen2/figuras/fig1_completitud_temporal.png" alt="Figura científica seleccionada" />
+              </div>
+              <p style="margin: 0; font-size: 0.88rem; color: var(--ink-secondary); line-height: 1.55;" id="figure-stage-desc"></p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="assets/kingston_data.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
